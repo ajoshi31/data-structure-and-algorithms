@@ -1,9 +1,6 @@
 package BinaryTree;
 
-import BinaryTree.problems.DeepestNodeInBinaryTree;
-import BinaryTree.problems.DiameterOfBinaryTree;
-import BinaryTree.problems.MinimumDepthOfBinaryTree;
-import BinaryTree.problems.ReverseLevelOrder;
+import BinaryTree.problems.*;
 
 class ProblemStatement {
     void functionToRun(String functionName, BinaryTreeNode node) {
@@ -76,6 +73,12 @@ class ProblemStatement {
                 new DiameterOfBinaryTree().getDiameterOfBinaryTree(node);
                 break;
             }
+
+            case PROBLEM21_1: {
+                WidthOfBinaryTree widthOfBinaryTree = new WidthOfBinaryTree();
+                System.out.print("\n\n The maximum width of the tree is: " + widthOfBinaryTree.maxWidth(node));
+                break;
+            }
             default:
                 // code block
         }
@@ -95,7 +98,8 @@ class ProblemStatement {
         PROBLEM16,
         PROBLEM16_1,
         PROBLEM17,
-        PROBLEM20
+        PROBLEM20,
+        PROBLEM21_1,
     }
 }
 
