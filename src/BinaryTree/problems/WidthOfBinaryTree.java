@@ -1,16 +1,22 @@
 package BinaryTree.problems;
 
+
+import UtilPackage.*;
 import BinaryTree.BinaryTreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class WidthOfBinaryTree {
-    public int maxWidth(BinaryTreeNode node) {
+
+    private int count[] = new int[20];
+
+    public int maxWidthOfBinaryTreeWithLevelOrder(BinaryTreeNode node) {
         if (node == null) {
             return 0;
         }
         int maxWidth = 0;
+
 
         Queue<BinaryTreeNode> queue = new LinkedList<BinaryTreeNode>();
 
@@ -35,4 +41,20 @@ public class WidthOfBinaryTree {
         }
         return maxWidth;
     }
+
+    public int maxWidthUsingPreOrderTraversal(BinaryTreeNode node) {
+        maxWidthUsingPreOrderTraversalUtil(node, 0);
+        AppUtil appUtil = new AppUtil();
+        return appUtil.maxInIntegerArray(count);
+    }
+
+    private void maxWidthUsingPreOrderTraversalUtil(BinaryTreeNode node, int level) {
+        if (node == null) {
+            return;
+        }
+        count[level]++;
+        maxWidthUsingPreOrderTraversalUtil(node.getLeft(), level + 1);
+        maxWidthUsingPreOrderTraversalUtil(node.getRight(), level + 1);
+    }
+
 }

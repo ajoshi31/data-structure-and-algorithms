@@ -76,7 +76,19 @@ class ProblemStatement {
 
             case PROBLEM21_1: {
                 WidthOfBinaryTree widthOfBinaryTree = new WidthOfBinaryTree();
-                System.out.print("\n\n The maximum width of the tree is: " + widthOfBinaryTree.maxWidth(node));
+                System.out.print("\n\n The maximum width of the tree is: " + widthOfBinaryTree.maxWidthOfBinaryTreeWithLevelOrder(node));
+                break;
+            }
+
+            case PROBLEM21_2: {
+                WidthOfBinaryTree widthOfBinaryTree = new WidthOfBinaryTree();
+                System.out.print("\n\n The maximum width of the tree is: " + widthOfBinaryTree.maxWidthUsingPreOrderTraversal(node));
+                break;
+            }
+
+            case PROBLEM22: {
+                LevelWithMaximumSum levelWithMaximumSum = new LevelWithMaximumSum();
+                System.out.print("\n\n The maximum sum in the level: " + levelWithMaximumSum.levelWithMaximumSum(node));
                 break;
             }
             default:
@@ -100,6 +112,8 @@ class ProblemStatement {
         PROBLEM17,
         PROBLEM20,
         PROBLEM21_1,
+        PROBLEM21_2,
+        PROBLEM22
     }
 }
 
