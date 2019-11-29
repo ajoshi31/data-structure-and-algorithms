@@ -12,7 +12,6 @@ public class AppUtil {
         return max;
     }
 
-
     public KeyValue maxKeyValueInArray(int array[]) {
 
         int max = 0;
@@ -25,7 +24,7 @@ public class AppUtil {
                 makKey = count;
             }
         }
-        return new KeyValue(max, makKey);
+        return new KeyValue(makKey, max);
     }
 }
 

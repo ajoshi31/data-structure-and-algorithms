@@ -87,8 +87,7 @@ class ProblemStatement {
             }
 
             case PROBLEM22: {
-                LevelWithMaximumSum levelWithMaximumSum = new LevelWithMaximumSum();
-                System.out.print("\n\n The maximum sum in the level: " + levelWithMaximumSum.levelWithMaximumSum(node));
+                new LevelWithMaximumSum().levelWithMaximumSum(node);
                 break;
             }
             default:

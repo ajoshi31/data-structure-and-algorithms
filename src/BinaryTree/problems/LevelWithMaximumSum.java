@@ -9,20 +9,20 @@ public class LevelWithMaximumSum {
     private int[] count = new int[20];
     private AppUtil appUtil = new AppUtil();
 
-    public int levelWithMaximumSum(BinaryTreeNode node) {
-        maxWidthUsingPreOrderTraversalUtil(node, 0);
-
+    public void levelWithMaximumSum(BinaryTreeNode node) {
+        levelWithMaximumSumUtil(node, 0);
         KeyValue keyValue = appUtil.maxKeyValueInArray(count);
-        return keyValue.value;
+        System.out.print("\n\n Maximum sum in level " + keyValue.key + "  is : " + keyValue.value);
+
     }
 
-    private void maxWidthUsingPreOrderTraversalUtil(BinaryTreeNode node, int level) {
+    private void levelWithMaximumSumUtil(BinaryTreeNode node, int level) {
         if (node == null) {
             return;
         }
         count[level] = count[level] + node.getData();
-        maxWidthUsingPreOrderTraversalUtil(node.getLeft(), level + 1);
-        maxWidthUsingPreOrderTraversalUtil(node.getRight(), level + 1);
+        levelWithMaximumSumUtil(node.getLeft(), level + 1);
+        levelWithMaximumSumUtil(node.getRight(), level + 1);
     }
 
 }
