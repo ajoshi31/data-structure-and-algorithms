@@ -15,7 +15,6 @@ class BinaryTreeUtilsFunctions {
     }
 
     int maxElementInBinaryTree(BinaryTreeNode node) {
-
         int MAX_ELEMENT = Integer.MIN_VALUE;
         if (node != null) {
             int maxElementInSubtree = maxElementInBinaryTree(node.getLeft()) > maxElementInBinaryTree(node.getRight()) ?

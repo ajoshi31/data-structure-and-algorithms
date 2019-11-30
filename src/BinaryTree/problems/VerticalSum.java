@@ -11,13 +11,11 @@ public class VerticalSum {
     public void findMaxVerticalSum(BinaryTreeNode node) {
         verticalSumUtil(node, 0);
         for (int k : hashMap.keySet()) {
-
             System.out.print("\nk: " + k + " Sum:  " + hashMap.get(k));
         }
     }
 
     private void verticalSumUtil(BinaryTreeNode node, Integer position) {
-
         if (node != null) {
             if (node.getLeft() != null) {
                 verticalSumUtil(node.getLeft(), position - 1);
@@ -32,5 +30,4 @@ public class VerticalSum {
             hashMap.put(position, data + node.getData());
         }
     }
-
 }
