@@ -1,8 +1,8 @@
 package BinaryTree;
 
-class BinaryTreeTraversal {
+public class BinaryTreeTraversal {
 
-    void preOrderTraversal(BinaryTreeNode node) {
+    public void preOrderTraversal(BinaryTreeNode node) {
         if (node != null) {
             System.out.print(node.getData() + " ");
             preOrderTraversal(node.getLeft());
@@ -10,7 +10,7 @@ class BinaryTreeTraversal {
         }
     }
 
-    void inOrderTraversal(BinaryTreeNode node) {
+    public void inOrderTraversal(BinaryTreeNode node) {
         if (node != null) {
             inOrderTraversal(node.getLeft());
             System.out.print(node.getData() + " ");
@@ -18,7 +18,7 @@ class BinaryTreeTraversal {
         }
     }
 
-    void postOrderTraversal(BinaryTreeNode node) {
+    public void postOrderTraversal(BinaryTreeNode node) {
         if (node != null) {
             postOrderTraversal(node.getLeft());
             postOrderTraversal(node.getRight());

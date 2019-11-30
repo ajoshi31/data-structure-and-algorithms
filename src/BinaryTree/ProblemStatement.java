@@ -105,6 +105,11 @@ class ProblemStatement {
                 break;
             }
 
+            case PROBLEM37: {
+                new GenerateBSTs().generateAllBSTWithGivenNodes(3);
+                break;
+            }
+
 
             default:
                 // code block
@@ -132,6 +137,7 @@ class ProblemStatement {
         PROBLEM23,
         PROBLEM24,
         PROBLEM36,
+        PROBLEM37
     }
 }
 

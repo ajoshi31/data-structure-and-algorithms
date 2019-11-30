@@ -5,7 +5,7 @@ public class BinaryTreeNode {
     private BinaryTreeNode left;
     private BinaryTreeNode right;
 
-    BinaryTreeNode(int data) {
+    public BinaryTreeNode(int data) {
         this.data = data;
         this.left = null;
         this.right = null;
@@ -23,7 +23,7 @@ public class BinaryTreeNode {
         return left;
     }
 
-    void setLeft(BinaryTreeNode left) {
+    public void setLeft(BinaryTreeNode left) {
         this.left = left;
     }
 
