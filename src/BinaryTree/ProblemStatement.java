@@ -110,6 +110,11 @@ class ProblemStatement {
                 break;
             }
 
+            case PROBLEM35: {
+                new VerticalSum().findMaxVerticalSum(node);
+                break;
+            }
+
 
             default:
                 // code block
@@ -137,7 +142,8 @@ class ProblemStatement {
         PROBLEM23,
         PROBLEM24,
         PROBLEM36,
-        PROBLEM37
+        PROBLEM37,
+        PROBLEM35
     }
 }
 
