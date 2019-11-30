@@ -100,6 +100,10 @@ class ProblemStatement {
                 System.out.println("\n The sum for the data is found as " + new HasPathSum().hasPathSum(node, 155, 0));
                 break;
             }
+            case PROBLEM36: {
+                System.out.println("\n The sum for the data is found as " + new BinaryTreeWithGivenNodes().numberOfBSTs(3));
+                break;
+            }
 
 
             default:
@@ -127,6 +131,7 @@ class ProblemStatement {
         PROBLEM22,
         PROBLEM23,
         PROBLEM24,
+        PROBLEM36,
     }
 }
 
