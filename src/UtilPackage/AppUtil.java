@@ -13,7 +13,6 @@ public class AppUtil {
     }
 
     public KeyValue maxKeyValueInArray(int array[]) {
-
         int max = 0;
         int makKey = 0;
         int count = 1;
@@ -25,6 +24,12 @@ public class AppUtil {
             }
         }
         return new KeyValue(makKey, max);
+    }
+
+    public void printIntegerArrayValues(int[] array, int length) {
+        for (int i = 0; i < length; i++) {
+            System.out.print(array[i] + " ");
+        }
     }
 }
 

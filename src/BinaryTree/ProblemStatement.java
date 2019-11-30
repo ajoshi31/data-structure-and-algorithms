@@ -90,6 +90,18 @@ class ProblemStatement {
                 new LevelWithMaximumSum().levelWithMaximumSum(node);
                 break;
             }
+
+            case PROBLEM23: {
+                new AllRootToLeafPath().printAllRootToLeafPath(node);
+                break;
+            }
+
+            case PROBLEM24: {
+                System.out.println("\n The sum for the data is found as " + new HasPathSum().hasPathSum(node, 155, 0));
+                break;
+            }
+
+
             default:
                 // code block
         }
@@ -112,7 +124,9 @@ class ProblemStatement {
         PROBLEM20,
         PROBLEM21_1,
         PROBLEM21_2,
-        PROBLEM22
+        PROBLEM22,
+        PROBLEM23,
+        PROBLEM24,
     }
 }
 

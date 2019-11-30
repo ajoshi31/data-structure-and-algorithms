@@ -12,7 +12,8 @@ public class Main {
 
         //Problem Statement To Solve
         ProblemStatement problemStatement = new ProblemStatement();
-        problemStatement.functionToRun("PROBLEM22", root);
+        problemStatement.functionToRun("PROBLEM23", root);
+        problemStatement.functionToRun("PROBLEM24", root);
     }
 
 }
