@@ -120,6 +120,11 @@ class ProblemStatement {
                 new PrintAncestorOfNode().printAncestor(node, new BinaryTreeNode(51));
                 break;
             }
+            case PROBLEM33: {
+
+                new LeastCommonAncestor().findLeastCommonAncestor(node, 45,100);
+                break;
+            }
 
             case PROBLEM29: {
 //                Inorder sequence: D B E A F C
@@ -170,7 +175,8 @@ class ProblemStatement {
         PROBLEM35,
         PROBLEM29,
         PROBLEM32,
-        PROBLEM38
+        PROBLEM38,
+        PROBLEM33
     }
 }
 
