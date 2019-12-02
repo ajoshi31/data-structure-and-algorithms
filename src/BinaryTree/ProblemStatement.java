@@ -115,6 +115,22 @@ class ProblemStatement {
                 break;
             }
 
+            case PROBLEM32: {
+                int[] data = {10, 50, 45, 60, 55, 51};
+                new PrintAncestorOfNode().printAncestor(node, new BinaryTreeNode(10));
+                new PrintAncestorOfNode().printAncestors(node, 51);
+                break;
+            }
+
+            case PROBLEM29: {
+//                Inorder sequence: D B E A F C
+//                Preorder sequence: A B D E C F
+                int in[] = {4, 2, 5, 1, 6, 3};
+                int pre[] = {1, 2, 4, 5, 3, 6};
+                new BTreeUsingInAndPreOrder().generateBTFromInAndPreOrderTraversal(pre, in);
+                break;
+            }
+
 
             default:
                 // code block
@@ -143,7 +159,9 @@ class ProblemStatement {
         PROBLEM24,
         PROBLEM36,
         PROBLEM37,
-        PROBLEM35
+        PROBLEM35,
+        PROBLEM29,
+        PROBLEM32,
     }
 }
 
