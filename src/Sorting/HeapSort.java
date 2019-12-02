@@ -1,6 +1,4 @@
 package Sorting;
 
-public class HeapSortgit
-
-{
+public class HeapSort {
 }
