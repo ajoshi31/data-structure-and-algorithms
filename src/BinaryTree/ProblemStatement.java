@@ -118,7 +118,6 @@ class ProblemStatement {
             case PROBLEM32: {
                 int[] data = {10, 50, 45, 60, 55, 51};
                 new PrintAncestorOfNode().printAncestor(node, new BinaryTreeNode(51));
-//                new PrintAncestorOfNode().printAncestors(node, 51);
                 break;
             }
 
@@ -128,6 +127,15 @@ class ProblemStatement {
                 int in[] = {4, 2, 5, 1, 6, 3};
                 int pre[] = {1, 2, 4, 5, 3, 6};
                 new BTreeUsingInAndPreOrder().generateBTFromInAndPreOrderTraversal(pre, in);
+                break;
+            }
+
+            case PROBLEM38: {
+                BuildTreeFromPreOrder buildTreeFromPreOrder = new BuildTreeFromPreOrder();
+                char[] abc = {'I', 'L', 'I', 'L', 'L'};
+                BinaryTreeNode newNnode = buildTreeFromPreOrder.buildTreeFromPreOrder(abc, 0);
+                BinaryTreeTraversal btt = new BinaryTreeTraversal();
+                btt.preOrderTraversal(newNnode);
                 break;
             }
 
@@ -162,6 +170,7 @@ class ProblemStatement {
         PROBLEM35,
         PROBLEM29,
         PROBLEM32,
+        PROBLEM38
     }
 }
 
