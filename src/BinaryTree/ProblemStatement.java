@@ -117,8 +117,8 @@ class ProblemStatement {
 
             case PROBLEM32: {
                 int[] data = {10, 50, 45, 60, 55, 51};
-                new PrintAncestorOfNode().printAncestor(node, new BinaryTreeNode(10));
-                new PrintAncestorOfNode().printAncestors(node, 51);
+                new PrintAncestorOfNode().printAncestor(node, new BinaryTreeNode(51));
+//                new PrintAncestorOfNode().printAncestors(node, 51);
                 break;
             }
 
