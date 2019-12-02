@@ -9,6 +9,7 @@ public class BuildTreeFromPreOrder {
         if (arr.length == i) {
             return null;
         }
+        // This is check
 
         BinaryTreeNode node = new BinaryTreeNode(arr[i]);
 
