@@ -9,13 +9,17 @@ public class Main {
         UtilFunctionKAry utilFunctionKAry = new UtilFunctionKAry();
         CreateKAryTree createKAryTree = new CreateKAryTree();
 
-        KAryNode root = createKAryTree.buildKaryTree(preOrder, n, k, utilFunctionKAry.heightOfKAry(n, k));
+        CreateNAryFromGivenArray createNAryFromGivenArray = new CreateNAryFromGivenArray();
 
-        utilFunctionKAry.printPostOrder(root, k);
-        System.out.println();
+//        KAryNode root = createKAryTree.buildKaryTree(preOrder, n, k, utilFunctionKAry.heightOfKAry(n, k));
+//
+//        utilFunctionKAry.printPostOrder(root, k);
+//        System.out.println();
+//
+//        TraversePreOrderKAryTree traversePreOrderKAryTree = new TraversePreOrderKAryTree();
+//        traversePreOrderKAryTree.preOrder(root);
 
-        TraversePreOrderKAryTree traversePreOrderKAryTree = new TraversePreOrderKAryTree();
-        traversePreOrderKAryTree.preOrder(root);
+        createNAryFromGivenArray.MakeTreeFromArrayDriver();
 
     }
 }

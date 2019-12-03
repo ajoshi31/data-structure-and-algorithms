@@ -25,7 +25,7 @@ public class KAryNode {
 
     KAryNode(int _val) {
         this.value = _val;
-        this.children = new ArrayList<KAryNode>();
+        this.children = new ArrayList<>();
     }
 }
 
