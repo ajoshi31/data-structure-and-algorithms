@@ -148,6 +148,15 @@ class ProblemStatement {
                 break;
             }
 
+            case PROBLEM_MORRIS: {
+                MorrisTraversal morrisTraversal = new MorrisTraversal();
+                morrisTraversal.morrisTraversalAlgo(node, "IN");
+                BinaryTreeTraversal btt = new BinaryTreeTraversal();
+                System.out.println("\n\nPrint the pre order traversal");
+                btt.preOrderTraversal(node);
+                break;
+            }
+
 
             default:
                 // code block
@@ -181,7 +190,8 @@ class ProblemStatement {
         PROBLEM32,
         PROBLEM38,
         PROBLEM33,
-        PROBLEM34
+        PROBLEM34,
+        PROBLEM_MORRIS
     }
 }
 

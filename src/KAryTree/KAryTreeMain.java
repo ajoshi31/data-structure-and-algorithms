@@ -1,6 +1,6 @@
 package KAryTree;
 
-public class Main {
+public class KAryTreeMain {
 
     public static void main(String args[]) {
 
@@ -11,13 +11,15 @@ public class Main {
 
         CreateNAryFromGivenArray createNAryFromGivenArray = new CreateNAryFromGivenArray();
 
-//        KAryNode root = createKAryTree.buildKaryTree(preOrder, n, k, utilFunctionKAry.heightOfKAry(n, k));
-//
-//        utilFunctionKAry.printPostOrder(root, k);
-//        System.out.println();
-//
-//        TraversePreOrderKAryTree traversePreOrderKAryTree = new TraversePreOrderKAryTree();
-//        traversePreOrderKAryTree.preOrder(root);
+        KAryNode root = createKAryTree.buildKaryTree(preOrder, n, k, utilFunctionKAry.heightOfKAry(n, k));
+
+        utilFunctionKAry.printPostOrder(root, k);
+        System.out.println();
+
+        TraversePreOrderKAryTree traversePreOrderKAryTree = new TraversePreOrderKAryTree();
+        traversePreOrderKAryTree.preOrder(root);
+
+        System.out.println();
 
         createNAryFromGivenArray.MakeTreeFromArrayDriver();
 
