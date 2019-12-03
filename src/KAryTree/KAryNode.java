@@ -7,7 +7,7 @@ public class KAryNode {
     private int value;
     private ArrayList<KAryNode> children;
 
-    public int getValue() {
+    int getValue() {
         return value;
     }
 
@@ -15,7 +15,7 @@ public class KAryNode {
         this.value = value;
     }
 
-    public ArrayList<KAryNode> getChildren() {
+    ArrayList<KAryNode> getChildren() {
         return children;
     }
 
@@ -23,7 +23,7 @@ public class KAryNode {
         this.children = children;
     }
 
-    public KAryNode(int _val) {
+    KAryNode(int _val) {
         this.value = _val;
         this.children = new ArrayList<KAryNode>();
     }

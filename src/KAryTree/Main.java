@@ -13,6 +13,10 @@ public class Main {
 
         utilFunctionKAry.printPostOrder(root, k);
         System.out.println();
+
+        TraversePreOrderKAryTree traversePreOrderKAryTree = new TraversePreOrderKAryTree();
+        traversePreOrderKAryTree.preOrder(root);
+
     }
 }
 

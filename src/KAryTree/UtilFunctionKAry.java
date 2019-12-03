@@ -1,14 +1,14 @@
 package KAryTree;
 
-public class UtilFunctionKAry {
+class UtilFunctionKAry {
 
-    public int heightOfKAry(int nodes, int k) {
+    int heightOfKAry(int nodes, int k) {
         return (int) Math.ceil(Math.log((double) nodes * (k - 1) + 1) /
                 Math.log((double) k));
     }
 
 
-    public void printPostOrder(KAryNode root, int k) {
+    void printPostOrder(KAryNode root, int k) {
         if (root == null)
             return;
         for (int i = 0; i < k; i++)

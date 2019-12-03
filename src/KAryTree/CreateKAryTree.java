@@ -1,10 +1,10 @@
 package KAryTree;
 
-public class CreateKAryTree {
+class CreateKAryTree {
     private static int ind = 0;
 
-    public KAryNode buildKaryTree(int A[], int n,
-                                          int k, int h) {
+    KAryNode buildKaryTree(int A[], int n,
+                           int k, int h) {
         // For null tree
         if (n <= 0)
             return null;
