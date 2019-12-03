@@ -122,7 +122,11 @@ class ProblemStatement {
             }
             case PROBLEM33: {
 
-                new LeastCommonAncestor().findLeastCommonAncestor(node, 45,100);
+                new LeastCommonAncestor().findLeastCommonAncestor(node, 45, 100);
+                break;
+            }
+            case PROBLEM34: {
+                new ZigZagTraversal().zigZagTraversalOfBinaryTree(node);
                 break;
             }
 
@@ -176,7 +180,8 @@ class ProblemStatement {
         PROBLEM29,
         PROBLEM32,
         PROBLEM38,
-        PROBLEM33
+        PROBLEM33,
+        PROBLEM34
     }
 }
 
