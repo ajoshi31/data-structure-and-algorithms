@@ -4,9 +4,7 @@ import BinaryTree.BinaryTreeNode;
 
 public class MorrisTraversal {
 
-
     public void morrisTraversalAlgo(BinaryTreeNode root, String typeTraversal) {
-
         if (root == null)
             return;
         BinaryTreeNode current = root;
@@ -35,5 +33,4 @@ public class MorrisTraversal {
             }
         }
     }
-
 }
