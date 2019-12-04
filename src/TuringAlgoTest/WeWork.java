@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.Stack;
 import java.lang.*;
 
-class wework {
+class WeWork {
     private static int biggestTable(int[][] grid) {
         int R = grid.length;
         int C = grid[0].length;
@@ -65,7 +65,7 @@ class wework {
     }
 
     public static void main(String args[]) {
-        int result = wework.biggestTable(getMatrix());
+        int result = WeWork.biggestTable(getMatrix());
         System.out.print(result);
     }
 }

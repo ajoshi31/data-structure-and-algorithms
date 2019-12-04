@@ -1,3 +1,5 @@
+//Complexity is O(n) Space Complexity O(1)
+
 package BinaryTree.problems;
 
 import BinaryTree.BinaryTreeNode;
@@ -17,7 +19,7 @@ public class MorrisTraversal {
                 while ((pre.getRight() != null) && (pre.getRight() != current)) {
                     pre = pre.getRight();
                 }
-                if (pre.getRight() == current) {
+                if (current == pre.getRight()) {
                     pre.setRight(null);
                     if (typeTraversal.equals("IN")) {
                         System.out.print(" " + current.getData());
@@ -34,3 +36,4 @@ public class MorrisTraversal {
         }
     }
 }
+
