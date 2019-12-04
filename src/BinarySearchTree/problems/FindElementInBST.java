@@ -28,8 +28,7 @@ public class FindElementInBST {
         while (node != null) {
             if (data == node.getData()) {
                 return true;
-            }
-            if (data > node.getData()) {
+            } else if (data > node.getData()) {
                 node = node.getRight();
             } else {
                 node = node.getLeft();
