@@ -6,11 +6,14 @@ import BinaryTree.BinaryTreeTraversal;
 class InitialiseBST {
 
     void initialise(BinaryTreeNode root) {
-        int[] subTreeData = {40,30,10,75,65, 5, 45};
+        int[] subTreeData = {5, 10, 20, 40, 50, 60};
         for (int aData : subTreeData) {
             insertUtil(root, aData);
         }
+        System.out.print("\nThe created tree is: \n");
         new BinaryTreeTraversal().inOrderTraversal(root);
+        System.out.print("\n");
+        System.out.print("-----------------------------");
     }
 
     private BinaryTreeNode insertUtil(BinaryTreeNode root, int data) {

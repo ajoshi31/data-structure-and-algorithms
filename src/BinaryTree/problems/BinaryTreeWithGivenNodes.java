@@ -9,7 +9,7 @@ public class BinaryTreeWithGivenNodes {
         for (int i = 2; i < n; i++) {
             count[i] = 0;
             for (int j = 0; j < i; j++) {
-                count[i] = count[i] + (count[j] * count[i - 1 - j]);
+                count[i] = count[i] + (count[j] * count[i - 1 - j]); // DP problem
             }
         }
 
