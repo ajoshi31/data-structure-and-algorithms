@@ -30,9 +30,14 @@ public class BSTMain {
 //        GreaterSumTree greaterSumTree = new GreaterSumTree();
 //        greaterSumTree.greaterSumTreeFromBST(root);
 
-        InPlaceBSTToCDLL inPlaceBSTToCDLL = new InPlaceBSTToCDLL();
-        BinaryTreeNode finalList = inPlaceBSTToCDLL.binaryTreeToCDoubleList(root);
-        inPlaceBSTToCDLL.displayCircularLinkedlistForBST(finalList);
+//        InPlaceBSTToCDLL inPlaceBSTToCDLL = new InPlaceBSTToCDLL();
+//        BinaryTreeNode finalList = inPlaceBSTToCDLL.binaryTreeToCDoubleList(root);
+//        inPlaceBSTToCDLL.displayCircularLinkedlistForBST(finalList);
 
+        int[] array = {10, 20, 30, 40, 50};
+        SortedArrayToBST sortedArrayToBST = new SortedArrayToBST();
+        System.out.println();
+        sortedArrayToBST.sortedArrayToBST(array);
     }
+
 }

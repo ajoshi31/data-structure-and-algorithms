@@ -16,6 +16,7 @@ public class BinaryTreeTraversal {
             System.out.print(node.getData() + " ");
             inOrderTraversal(node.getRight());
         }
+
     }
 
     public void postOrderTraversal(BinaryTreeNode node) {

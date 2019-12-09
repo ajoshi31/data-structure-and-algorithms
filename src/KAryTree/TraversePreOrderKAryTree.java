@@ -6,7 +6,7 @@ class TraversePreOrderKAryTree {
     private ArrayList<Integer> nodes;
 
     void preOrder(KAryNode root) {
-        nodes = new ArrayList<Integer>();
+        nodes = new ArrayList<>();
         preOrderUtil(root);
         for (Integer node : nodes) {
             System.out.print(node + " ");
