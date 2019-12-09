@@ -6,7 +6,7 @@ import BinaryTree.BinaryTreeTraversal;
 class InitialiseBST {
 
     void initialise(BinaryTreeNode root) {
-        int[] subTreeData = {5, 10, 20, 40, 50, 60};
+        int[] subTreeData = {20, 10, 30, 80, 70, 90};
         for (int aData : subTreeData) {
             insertUtil(root, aData);
         }

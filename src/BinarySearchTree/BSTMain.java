@@ -9,7 +9,7 @@ public class BSTMain {
     public static void main(String[] args) {
 
 
-        BinaryTreeNode root = new BinaryTreeNode(30);
+        BinaryTreeNode root = new BinaryTreeNode(50);
         new InitialiseBST().initialise(root);
 
 //        FindElementInBST findElementInBST = new FindElementInBST();
@@ -34,10 +34,19 @@ public class BSTMain {
 //        BinaryTreeNode finalList = inPlaceBSTToCDLL.binaryTreeToCDoubleList(root);
 //        inPlaceBSTToCDLL.displayCircularLinkedlistForBST(finalList);
 
-        int[] array = {10, 20, 30, 40, 50};
-        SortedArrayToBST sortedArrayToBST = new SortedArrayToBST();
-        System.out.println();
-        sortedArrayToBST.sortedArrayToBST(array);
+//        int[] array = {10, 20, 30, 40, 50};
+//        SortedArrayToBST sortedArrayToBST = new SortedArrayToBST();
+//        System.out.println();
+//        sortedArrayToBST.sortedArrayToBST(array);
+//
+//        BinaryTreeTraversal btt = new BinaryTreeTraversal();
+//        System.out.println();
+//        btt.preOrderTraversal(root);
+
+        SortedDLLToBST sortedDLLToBST = new SortedDLLToBST();
+        sortedDLLToBST.sortedDLLtoBST();
+
+
     }
 
 }
