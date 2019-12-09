@@ -34,9 +34,7 @@ import BinaryTree.BinaryTreeTraversal;
 import java.util.ArrayList;
 
 public class GenerateBSTs {
-
     public void generateAllBSTWithGivenNodes(int n) {
-
         if (n == 0) {
             constructTree(1, 0);
         }
@@ -49,8 +47,7 @@ public class GenerateBSTs {
     }
 
     private ArrayList<BinaryTreeNode> constructTree(int start, int end) {
-        ArrayList<BinaryTreeNode> list = new ArrayList<BinaryTreeNode>();
-
+        ArrayList<BinaryTreeNode> list = new ArrayList<>();
         if (start > end) {
             list.add(null);
             return list;
@@ -67,11 +64,7 @@ public class GenerateBSTs {
                     list.add(addedNode);
                 }
             }
-
         }
         return list;
     }
-
 }
-
-
