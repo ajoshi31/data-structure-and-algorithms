@@ -2,6 +2,7 @@ package BinarySearchTree;
 
 import BinarySearchTree.problems.*;
 import BinaryTree.BinaryTreeNode;
+import BinaryTree.BinaryTreeTraversal;
 
 public class BSTMain {
 
@@ -26,9 +27,12 @@ public class BSTMain {
 //        FindLCAInBST findLCAInBST = new FindLCAInBST();
 //        findLCAInBST.findLCAInBST(root, 30, 43);
 
-        GreaterSumTree greaterSumTree = new GreaterSumTree();
-        greaterSumTree.greaterSumTreeFromBST(root);
+//        GreaterSumTree greaterSumTree = new GreaterSumTree();
+//        greaterSumTree.greaterSumTreeFromBST(root);
 
+        InPlaceBSTToCDLL inPlaceBSTToCDLL = new InPlaceBSTToCDLL();
+        BinaryTreeNode finalList = inPlaceBSTToCDLL.binaryTreeToCDoubleList(root);
+        inPlaceBSTToCDLL.displayCircularLinkedlistForBST(finalList);
 
     }
 }
