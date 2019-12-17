@@ -15,11 +15,11 @@ public class KthSmallestElementInBST {
         if (node == null) {
             return null;
         }
-        BinaryTreeNode leftNode = FindKthSmallestElementInBSTUtil(node.getLeft(), kth, count);
         if (++count == kth) {
             return node;
         }
-
+        BinaryTreeNode leftNode = FindKthSmallestElementInBSTUtil(node.getLeft(), kth, count);
+        BinaryTreeNode rightnode = FindKthSmallestElementInBSTUtil(node.getRight(), kth, count);
         return null;
     }
 }

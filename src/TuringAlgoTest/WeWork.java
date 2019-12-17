@@ -1,4 +1,4 @@
-package turing;
+package TuringAlgoTest;
 
 import java.util.Scanner;
 import java.util.Stack;
