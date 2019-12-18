@@ -5,7 +5,6 @@ import java.util.Arrays;
 class BubbleSort {
     void bubbleSort(int[] array, int n) {
 
-        System.out.println(Arrays.toString(array));
         for (int i = 0; i < n - 1; i++) {
 
             boolean swapBool = false;

@@ -6,11 +6,11 @@ public class SortMain {
 
         int[] input = {3, 4, 1, 6, 18, 5, 10, 11, 2};
 
-        SelectionSort selectionSort = new SelectionSort();
-//        selectionSort.selectionSort(input, input.length);
 
-        BubbleSort bubbleSort = new BubbleSort();
-        bubbleSort.bubbleSort(input, input.length);
+//        new SelectionSort().selectionSort(input, input.length);
+//        new BubbleSort().bubbleSort(input, input.length);
+//        new InsertionSort().insertionSort(input, input.length);
+        new InsertionSort().insertionSortRecursion(input, input.length);
 
 
     }
