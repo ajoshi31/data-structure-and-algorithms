@@ -15,6 +15,10 @@ public class MaxSubsequence {
     }
 
     private static void myFunc(String str, String goal, String initial, Integer index, Integer strTracker, Integer len, char current) {
+        if (len == 0) {
+            count = -1;
+            return;
+        }
         if (strTracker.equals(len)) {
             count++;
             return;
