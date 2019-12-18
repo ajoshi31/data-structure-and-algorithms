@@ -11,8 +11,8 @@ public class SortMain {
 //        new BubbleSort().bubbleSort(input, input.length);
 //        new InsertionSort().insertionSort(input, input.length);
 //        new InsertionSort().insertionSortRecursion(input, input.length);
-        new MergeSort().mergeSort(input, input.length);
-
+//        new MergeSort().mergeSort(input, input.length);
+        new QuickSort().quickSort(input, input.length);
 
     }
 }
