@@ -10,7 +10,8 @@ public class SortMain {
 //        new SelectionSort().selectionSort(input, input.length);
 //        new BubbleSort().bubbleSort(input, input.length);
 //        new InsertionSort().insertionSort(input, input.length);
-        new InsertionSort().insertionSortRecursion(input, input.length);
+//        new InsertionSort().insertionSortRecursion(input, input.length);
+        new MergeSort().mergeSort(input, input.length);
 
 
     }
