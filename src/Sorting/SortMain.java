@@ -7,7 +7,10 @@ public class SortMain {
         int[] input = {3, 4, 1, 6, 18, 5, 10, 11, 2};
 
         SelectionSort selectionSort = new SelectionSort();
-        selectionSort.selectionSort(input, input.length);
+//        selectionSort.selectionSort(input, input.length);
+
+        BubbleSort bubbleSort = new BubbleSort();
+        bubbleSort.bubbleSort(input, input.length);
 
 
     }
