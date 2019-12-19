@@ -2,46 +2,54 @@ package TuringAlgoTest;
 
 public class MaxSubsequence {
 
+    private static int goalLength = 0;
     private static int count = 0;
+    private static int strTracker = 1;
+    private static String initial;
 
     public static void main(String[] args) {
-        //Initialise root
-        String initial = "xyz";
-        String goal = "xzyrxz";
-        Integer abc = goal.length();
-        String str = String.valueOf(goal.charAt(0));
-        myFunc(str, goal, initial, 0, 1, abc, goal.charAt(0));
-        System.out.print(count);
+
+        initial = "xyz";
+        String goal = "";
+        goalLength = goal.length();
+        if (goalLength == 0) {
+            System.out.print(-1);
+        } else {
+            myFunc(goal.substring(0, 1), goal, 0);
+            System.out.print(count);
+        }
+
     }
 
-    private static void myFunc(String str, String goal, String initial, Integer index, Integer strTracker, Integer len, char current) {
-        if (len == 0) {
+    private static void myFunc(String newSubSequenceString, String goal, int index) {
+
+        // To check if the next character exist in the initial string or not of no then goal cannot be formed
+        if (!initial.contains(String.valueOf(goal.charAt(index)))) {
             count = -1;
             return;
         }
-        if (strTracker.equals(len)) {
-            count++;
-            return;
-        }
-        boolean isCharaAvail = initial.contains(String.valueOf(current));
-        if (!isCharaAvail) {
-            count = -1;
-            return;
+        boolean isFound = isSubSequence(newSubSequenceString, initial, newSubSequenceString.length(), initial.length());
+
+        // Recursion termination condition to reach end of string
+        if (strTracker == goalLength) {
+            if (isFound) {
+                count++;
+                return;
+            }
         }
 
-        boolean isFound = isSubSequence(str, initial, str.length(), initial.length());
-        current = goal.charAt(index + 1);
+        //Create the new sub sequence if the is found is false else keep on tracking the string
         if (isFound) {
             index = index + 1;
-            str = str + String.valueOf(goal.charAt(index));
+            newSubSequenceString = newSubSequenceString + String.valueOf(goal.charAt(index));
             strTracker = strTracker + 1;
         } else {
             goal = goal.substring(index);
             index = 0;
-            str = String.valueOf(goal.charAt(index));
+            newSubSequenceString = String.valueOf(goal.charAt(index));
             count++;
         }
-        myFunc(str, goal, initial, index, strTracker, len, current);
+        myFunc(newSubSequenceString, goal, index);
     }
 
     private static boolean isSubSequence(String str1, String str2, int m, int n) {
