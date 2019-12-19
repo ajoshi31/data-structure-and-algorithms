@@ -23,7 +23,6 @@ public class FindLCAInBST {
         if (root.getData() == a || root.getData() == b) {
             return root;
         }
-
         if (root.getData() > Math.max(a, b)) {
             return findLCAInBSTUtil(root.getLeft(), a, b);
         } else if (root.getData() < Math.min(a, b)) {
