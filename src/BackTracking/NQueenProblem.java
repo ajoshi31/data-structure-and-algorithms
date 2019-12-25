@@ -12,19 +12,21 @@ package BackTracking;
 public class NQueenProblem {
 
     public static void main(String[] args) {
-        NQueenProblem s = new NQueenProblem();
 
         // Pass the n queens and return as the list of possible positions
-        Position[] positions = s.nQueenSolution(4);
-
-        for (Position position : positions) {
-            System.out.println(position.row + ", " + position.col);
+        int[] nQueens = {4, 5, 6, 7};
+        for (int queen : nQueens) {
+            NQueenProblem s = new NQueenProblem();
+            Position[] positions = s.nQueenSolution(queen);
+            System.out.println("The possible location for the " + queen + " queen is: ");
+            for (Position position : positions) {
+                System.out.println(position.row + ", " + position.col);
+            }
         }
     }
 
     private boolean isSafe(Position[] positions, int row, int col) {
         //Check if this row and col is not under attack from any previous queen. The position will just run till row
-
         for (int i = 0; i < row; i++) {
             if (positions[i].col == col || positions[i].row - positions[i].col == row - col ||
                     positions[i].row + positions[i].col == row + col) {
@@ -53,11 +55,9 @@ public class NQueenProblem {
     }
 
     private Position[] nQueenSolution(int nQueens) {
-
         // Initialise the position array for nQueens each row is equivalent to the index
         // and we need to pass the valid column to each row can have only one column
         Position[] positions = new Position[nQueens];
-
         boolean hasSolution = nQueenUtil(nQueens, 0, positions);
 
         if (hasSolution) {
@@ -72,9 +72,9 @@ public class NQueenProblem {
  * Position class to hold the row and column in position array
  */
 class Position {
-    public int row, col;
+    int row, col;
 
-    public Position(int row, int col) {
+    Position(int row, int col) {
         this.row = row;
         this.col = col;
     }

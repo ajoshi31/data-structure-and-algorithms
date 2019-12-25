@@ -8,7 +8,6 @@ class MergeSort {
         System.out.println(Arrays.toString(arr));
         mergeSortUtil(arr, 0, n - 1);
         System.out.println(Arrays.toString(arr));
-
     }
 
     private void mergeSortUtil(int[] arr, int left, int right) {

@@ -11,11 +11,9 @@ public class AllRootToLeafPath {
 
         int[] paths = new int[256];
         printAllRootToLeafPathUtil(node, paths, 0);
-
     }
 
     private void printAllRootToLeafPathUtil(BinaryTreeNode node, int[] pathArray, int pathLength) {
-
         if (node == null) {
             return;
         }
@@ -29,6 +27,5 @@ public class AllRootToLeafPath {
 
         System.out.println();
     }
-
 }
 
