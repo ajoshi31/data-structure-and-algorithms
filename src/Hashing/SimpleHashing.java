@@ -20,6 +20,7 @@ public class SimpleHashing {
         Scanner in = new Scanner(System.in);
         int numInputs = in.nextInt();
 
+
         initializeLists();
 
         while (numInputs > 0) {
