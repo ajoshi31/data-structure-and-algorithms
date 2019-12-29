@@ -7,21 +7,20 @@ public class HeapSort {
 
     private static void heapSort() {
 
-        Heap heap = new Heap();
         int N = inputArray.length;
         System.out.println("Initial Input");
         System.out.println(Arrays.toString(inputArray));
         for (int i = (N / 2) - 1; i >= 0; i--) {
             maxHeapify(inputArray, i, N);
         }
-
-        int heapSize = N;
-        //Now delete max and put ithe last element in the root and then hapify that element, and put max in the last element
-        for (int i = N - 1; i >= 1; i--) {
-            swap(0, i); // Swap last element with the first max element
-            heapSize = heapSize - 1;
-            maxHeapify(inputArray, 0, heapSize);
-        }
+//Sorting
+//        int heapSize = N;
+//        //Now delete max and put ithe last element in the root and then hapify that element, and put max in the last element
+//        for (int i = N - 1; i >= 1; i--) {
+//            swap(0, i); // Swap last element with the first max element
+//            heapSize = heapSize - 1;
+//            maxHeapify(inputArray, 0, heapSize);
+//        }
 
         System.out.println("Sorted Array");
         System.out.println(Arrays.toString(inputArray));
@@ -52,10 +51,30 @@ public class HeapSort {
         int temp = inputArray[i];
         inputArray[i] = inputArray[j];
         inputArray[j] = temp;
+
     }
 
     public static void main(String args[]) {
         heapSort();
+        int length = inputArray.length + 1;
+        int[] copy = new int[inputArray.length + 1];
+        System.arraycopy(inputArray, 0, copy, 0, inputArray.length);
+        inputArray = copy;
+
+        swim(length - 1, 78);
+
+        System.out.println("Sorted Array");
+        System.out.println(Arrays.toString(inputArray));
+
     }
 
+
+    private static void swim(int i, int val) {
+        inputArray[i] = val;
+        while (i > 0 && inputArray[i / 2] < inputArray[i]) {
+            swap(i / 2, i);
+            i = i / 2;
+        }
+
+    }
 }

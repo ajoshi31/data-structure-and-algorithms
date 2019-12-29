@@ -2,7 +2,7 @@ package Searching;
 
 import java.util.Arrays;
 
-public class RGBSeperation {
+public class RGBSepration {
     public static void main(String args[]) {
         String[] inputArray = {"R", "G", "B", "R", "R", "G", "R", "B"};
         // Output = [R, R, R, R, G, G, B, B]

@@ -1,64 +1,70 @@
 package PriorityQueue;
 
-import java.util.Arrays;
-
 public class Heap {
-    private static int[] inputArray = {2, 1, 3, 4, 7, 9, 6, 5, 8};
 
-    public static void main(String args[]) {
-        int n = inputArray.length;
-        for (int i = (n / 2) - 1; i >= 0; i--) {
-            maxHeapify(inputArray, i, n);
-        }
-        System.out.println(Arrays.toString(inputArray));
+    // This class should not be instantiated.
+    private Heap() {
     }
 
-    public static void maxHeapify(int[] A, int i, int N) {
-        int left = 2 * i + 1;
-        int right = 2 * i + 2;
-        int max = -1;
-        if (left < N && right < N) {
-            if (A[left] > A[right]) {
-                max = left;
-            } else {
-                max = right;
-            }
-            if (A[i] > A[max]) {
-                max = i;
-            }
-            if (max != i) {
-                swap(max, i);
-                maxHeapify(A, max, N);
-            }
+    /**
+     * Rearranges the array in ascending order, using the natural order.
+     *
+     * @param pq the array to be sorted
+     */
+    private static void sort(Comparable[] pq) {
+        int n = pq.length;
+        for (int k = n / 2; k >= 1; k--)
+            sink(pq, k, n);
+        while (n > 1) {
+            exch(pq, 1, n--);
+            sink(pq, 1, n);
         }
     }
 
-    public static void minHeapify(int[] A, int i, int N) {
-        int left = 2 * i + 1;
-        int right = 2 * i + 2;
-        int min = Integer.MAX_VALUE;
-        if (left < N && right < N) {
-            if (A[left] < A[right]) {
-                min = left;
-            } else {
-                min = right;
-            }
-            if (A[i] < A[min]) {
-                min = i;
-            }
-            if (min != i) {
-                swap(min, i);
-                maxHeapify(A, min, N);
-            }
-        }
+    /***************************************************************************
+     * Helper functions to restore the heap invariant.
+     ***************************************************************************/
 
+    private static void sink(Comparable[] pq, int k, int n) {
+        while (2 * k <= n) {
+            int j = 2 * k;
+            if (j < n && less(pq, j, j + 1)) j++;
+            if (!less(pq, k, j)) break;
+            exch(pq, k, j);
+            k = j;
+        }
     }
 
-    public static void swap(int i, int j) {
-        int temp = inputArray[i];
-        inputArray[i] = inputArray[j];
-        inputArray[j] = temp;
+    /***************************************************************************
+     * Helper functions for comparisons and swaps.
+     * Indices are "off-by-one" to support 1-based indexing.
+     ***************************************************************************/
+    private static boolean less(Comparable[] pq, int i, int j) {
+        return pq[i - 1].compareTo(pq[j - 1]) < 0;
+    }
+
+    private static void exch(Object[] pq, int i, int j) {
+        Object swap = pq[i - 1];
+        pq[i - 1] = pq[j - 1];
+        pq[j - 1] = swap;
+    }
+
+    // print array to standard output
+    private static void show(Comparable[] a) {
+        for (Comparable anA : a) {
+            System.out.println(anA);
+        }
+    }
+
+    /**
+     * Reads in a sequence of strings from standard input; heapsorts them;
+     * and prints them to standard output in ascending order.
+     *
+     * @param args the command-line arguments
+     */
+    public static void main(String[] args) {
+        String[] a = {"21", "1212"};
+        Heap.sort(a);
+        show(a);
     }
 }
-//[9, 8, 6, 5, 7, 3, 2, 1, 4]
-//[9, 8, 6, 5, 7, 3, 2, 1, 4]
