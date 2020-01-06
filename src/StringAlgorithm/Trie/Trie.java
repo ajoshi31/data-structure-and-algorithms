@@ -1,7 +1,4 @@
-package StringAlgorithm;
-
-import java.util.HashMap;
-import java.util.Map;
+package StringAlgorithm.Trie;
 
 public class Trie {
 

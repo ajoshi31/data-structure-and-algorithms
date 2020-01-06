@@ -1,4 +1,4 @@
-package StringAlgorithm;
+package StringAlgorithm.Trie;
 
 import java.util.HashMap;
 import java.util.Map;
