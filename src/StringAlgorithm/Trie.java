@@ -81,6 +81,10 @@ public class Trie {
 
         System.out.println(tries.search("the", trieNode));
         System.out.println(tries.search("trie", trieNode));
+
+        tries.delete("the", trieNode, 0);
+        System.out.println(tries.search("the", trieNode));
+        System.out.println(tries.search("trie", trieNode));
     }
 
 
