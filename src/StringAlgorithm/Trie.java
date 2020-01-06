@@ -43,9 +43,32 @@ public class Trie {
         return current.isEndOfWord; // if that is end of word it will return true if it is not then false
     }
 
+
+    private boolean delete(String str, TrieNode current, int index) {
+        if (index == str.length()) { // as it start with zero it will reach end
+
+            if (!current.isEndOfWord) {
+                return false;
+            }
+            current.isEndOfWord = false;
+            return current.children.size() == 0;
+        }
+        char ch = str.charAt(index);
+        TrieNode node = current.children.get(ch);
+        if (node == null) {
+            return false;
+        }
+        boolean shouldDeleteCurrentNode = delete(str, node, index + 1);
+        if (shouldDeleteCurrentNode) {
+            current.children.remove(ch);
+            return current.children.size() == 0;
+        }
+        return false;
+    }
+
     public static void main(String args[]) {
 
-        String keys[] = {"the", "present"};
+        String keys[] = {"the", "there"};
 
         Trie tries = new Trie();
 
@@ -56,7 +79,7 @@ public class Trie {
 
         }
 
-        System.out.println(tries.search("th", trieNode));
+        System.out.println(tries.search("the", trieNode));
         System.out.println(tries.search("trie", trieNode));
     }
 
