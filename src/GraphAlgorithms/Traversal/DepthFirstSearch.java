@@ -10,7 +10,7 @@ public class DepthFirstSearch {
         int V;
         LinkedList[] vertexList;
 
-        public Graph(int v) {
+        Graph(int v) {
             this.V = v;
             vertexList = new LinkedList[v];
 
@@ -18,26 +18,22 @@ public class DepthFirstSearch {
                 vertexList[i] = new LinkedList<>();
             }
         }
-
     }
 
-    public void addEdge(Graph graph, int src, int dest) {
+    private void addEdge(Graph graph, int src, int dest) {
         graph.vertexList[src].add(dest); // Directed Graph Only
     }
 
-    public void DFSRecursive(Graph graph, int vertex) {
-
+    private void DFSRecursive(Graph graph, int vertex) {
         if (vertex > graph.V) {
             throw new IllegalArgumentException("Value not defined");
         }
-
         boolean visited[] = new boolean[graph.V];
         DFSRecursiveUtil(graph, vertex, visited);
 
     }
 
     private void DFSRecursiveUtil(Graph graph, int vertex, boolean[] visited) {
-
         visited[vertex] = true;
         System.out.print(vertex + " ");
         for (Object o : graph.vertexList[vertex]) {
@@ -46,10 +42,9 @@ public class DepthFirstSearch {
                 DFSRecursiveUtil(graph, n, visited);
             }
         }
-
     }
 
-    public void dfsIterative(Graph graph, int vertex) {
+    private void dfsIterative(Graph graph, int vertex) {
 
         if (vertex > graph.V) {
             throw new IllegalArgumentException("Value not defined");
