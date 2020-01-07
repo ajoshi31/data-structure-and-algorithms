@@ -1,5 +1,6 @@
 package StringAlgorithm.TernarySearchTree;
 
+
 public class TST<Value> {
 
     private TSTNode root;
@@ -8,14 +9,20 @@ public class TST<Value> {
         // implement tst
         TST tst = new TST();
 
-        tst.insertInTST("tree");
-        tst.insertInTST("sea");
-        tst.insertInTST("eat");
-        tst.insertInTST("eating");
+        tst.insertInTST("cat");
+        tst.insertInTST("cats");
+        tst.insertInTST("bump");
+        tst.insertInTST("bug");
+        tst.insertInTST("up");
+        tst.insertInTST("upset");
+        tst.insertInTST("set");
+        tst.insertInTST("bat");
 
-        System.out.println(tst.searchTST("eat"));
+        System.out.println(tst.searchTST("up"));
         System.out.println(tst.searchTST("eating"));
-        System.out.println(tst.searchTST("eatr"));
+        System.out.println(tst.searchTST("ups"));
+
+        tst.traverse();
     }
 
 
@@ -33,7 +40,7 @@ public class TST<Value> {
         }
         if (ch < node.data) {
             node.left = insertUtil(node.left, str, position);
-        } else if (ch < node.data) {
+        } else if (ch > node.data) {
             node.right = insertUtil(node.right, str, position);
         } else {
             if (position < str.length() - 1) {
@@ -68,14 +75,28 @@ public class TST<Value> {
         }
     }
 
-    private void traverse(String str) {
-        traverseUtil(root, str, 0);
+    private void traverse() {
+        char[] buffer = new char[10];
+        traverseUtil(root, buffer, 0);
     }
 
-    private void traverseUtil(TSTNode node, String str, int position) {
-        if(root == null){
+    private void traverseUtil(TSTNode node, char[] buffer, int position) {
+        if (node == null) {
             return;
         }
+
+        traverseUtil(node.left, buffer, position);
+        buffer[position] = node.data;
+        if (node.isEndOfString) {
+            buffer[position + 1] = '\0';
+            String str = new String(buffer);
+            System.out.println(str);
+
+        }
+        traverseUtil(node.middle, buffer, position + 1);
+
+        traverseUtil(node.right, buffer, position);
+
 
     }
 
