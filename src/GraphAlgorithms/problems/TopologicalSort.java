@@ -34,29 +34,23 @@ public class TopologicalSort<T> {
             Vertex<Integer> ans = (Vertex<Integer>) result.pop();
             System.out.print(ans.getId() + " ");
         }
-
     }
 
     private Stack<Vertex<T>> topologicalSort(GenericGraph graph) {
-
         Stack<Vertex<T>> stack = new Stack<>();
         Set<Vertex<T>> visitedVertexSet = new HashSet<>();
-
         for (Object vertex : graph.getAllVertices()) {
             if (visitedVertexSet.contains(vertex)) {
                 continue;
             }
             topologicalSortUtil((Vertex<T>) vertex, stack, visitedVertexSet);
         }
-
         return stack;
-
     }
 
     private void topologicalSortUtil(Vertex<T> vertex, Stack<Vertex<T>> stack, Set<Vertex<T>> visitedVertexSet) {
 
         visitedVertexSet.add(vertex);
-        //Add value to map
         for (Object adjVertex : vertex.getAdjacentVertex()) {
             if (visitedVertexSet.contains(adjVertex)) {
                 continue;

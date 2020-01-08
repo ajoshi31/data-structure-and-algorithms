@@ -20,7 +20,6 @@ public class GenericGraph<T> {
 
     public void setDataForVertex(long id, T data) {
         // Check if the vertex exisit
-
         if (allVertices.containsKey(id)) {
             Vertex<T> v = allVertices.get(id);
             v.setData(data);
@@ -29,26 +28,23 @@ public class GenericGraph<T> {
 
     public void addEdge(long src, long dest) {
 
-        Vertex<T> v1 = null;
-        //Check the vertices in the graph if exist then get vertex to create edge else create the vertex
-        if (allVertices.containsKey(src)) {
-            v1 = allVertices.get(src);
-        } else {
-            v1 = new Vertex<>(src);
-            allVertices.put(src, v1);
-        }
-
-        Vertex<T> v2 = null;
-        if (allVertices.containsKey(dest)) {
-            v2 = allVertices.get(dest);
-        } else {
-            v2 = new Vertex<>(dest);
-            allVertices.put(dest, v2);
-        }
+        Vertex<T> v1 = avoidDuplicateVertex(src);
+        Vertex<T> v2 = avoidDuplicateVertex(dest);
 
         v1.addAdjacentVertex(v2);
         if (!isDirected) {
             v2.addAdjacentVertex(v1);
         }
+    }
+
+    private Vertex<T> avoidDuplicateVertex(long vertexId) {
+        Vertex<T> v;
+        if (allVertices.containsKey(vertexId)) {
+            v = allVertices.get(vertexId);
+        } else {
+            v = new Vertex<>(vertexId);
+            allVertices.put(vertexId, v);
+        }
+        return v;
     }
 }
