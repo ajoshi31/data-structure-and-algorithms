@@ -1,12 +1,8 @@
 package DynamicProblems;
 
-import java.util.Arrays;
-
 public class FibonacciNumber {
 
-
     public static void main(String args[]) {
-
         int n = 20;
         int[] arr = new int[n + 1];
         for (int i = 0; i < n; i++) {
@@ -20,6 +16,4 @@ public class FibonacciNumber {
             System.out.print(arr[i] + " ");
         }
     }
-
-
 }

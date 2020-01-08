@@ -1,30 +1,11 @@
 package GraphAlgorithms.Traversal;
 
-import java.util.LinkedList;
-import java.util.ListIterator;
 import java.util.Stack;
 
-public class DepthFirstSearch {
+class DepthFirstSearch {
 
-    static class Graph {
-        int V;
-        LinkedList[] vertexList;
 
-        Graph(int v) {
-            this.V = v;
-            vertexList = new LinkedList[v];
-
-            for (int i = 0; i < v; i++) {
-                vertexList[i] = new LinkedList<>();
-            }
-        }
-    }
-
-    private void addEdge(Graph graph, int src, int dest) {
-        graph.vertexList[src].add(dest); // Directed Graph Only
-    }
-
-    private void DFSRecursive(Graph graph, int vertex) {
+    void DFSRecursive(Graph graph, int vertex) {
         if (vertex > graph.V) {
             throw new IllegalArgumentException("Value not defined");
         }
@@ -44,7 +25,7 @@ public class DepthFirstSearch {
         }
     }
 
-    private void dfsIterative(Graph graph, int vertex) {
+    void dfsIterative(Graph graph, int vertex) {
 
         if (vertex > graph.V) {
             throw new IllegalArgumentException("Value not defined");
@@ -72,42 +53,4 @@ public class DepthFirstSearch {
     }
 
 
-    private void traverseGraphList(Graph G) {
-        int i = 0;
-        for (LinkedList list : G.vertexList) {
-            ListIterator itr = list.listIterator();
-            System.out.print("src: " + i++ + " ");
-            while (itr.hasNext()) {
-                System.out.print("  -> " + itr.next());
-            }
-            System.out.println();
-        }
-    }
-
-    public static void main(String args[]) {
-
-        DepthFirstSearch g = new DepthFirstSearch();
-
-        int n = 8;
-        Graph graph = new Graph(n);
-        g.addEdge(graph, 0, 1);
-        g.addEdge(graph, 0, 2);
-        g.addEdge(graph, 1, 2);
-        g.addEdge(graph, 2, 0);
-        g.addEdge(graph, 2, 3);
-        g.addEdge(graph, 3, 3);
-        g.addEdge(graph, 3, 4);
-        g.addEdge(graph, 5, 4);
-        g.addEdge(graph, 5, 6);
-        g.addEdge(graph, 7, 6);
-
-        System.out.println("DFS starting from node 2");
-
-        g.DFSRecursive(graph, 2);
-        System.out.println();
-        g.dfsIterative(graph, 2);
-        System.out.println();
-        g.traverseGraphList(graph);
-
-    }
 }
