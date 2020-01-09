@@ -49,8 +49,11 @@ public class BinaryMinHeapMap<T> {
         return positionMap.containsKey(key);
     }
 
-    public void extractMin(){
-
+    public void extractMin() {
+        int size = heapArray.size();
+        Node<T> endNode = heapArray.get(size - 1);
+        heapArray.remove(size - 1);
+        // replace first with the node and heapify or sink
     }
 
     /**
@@ -60,13 +63,21 @@ public class BinaryMinHeapMap<T> {
         int i = n - 1;
         while (i > 0) {
             // Get value at this node and parent node is parent is > current swap
-            Node currentNode = heapArray.get(i);
-            Node parent = heapArray.get((i - 1) / 2);
+            Node<T> currentNode = heapArray.get(i);
+            Node<T> parent = heapArray.get((i - 1) / 2);
             if (parent.getWeight() > currentNode.getWeight()) {
                 swap(heapArray, i, (i - 1) / 2);
+                updateMap(currentNode.getKey(), parent.getKey(), i);
+                i = (i - 1) / 2;
+            } else {
+                break;
             }
-            i = (i - 1) / 2;
         }
+    }
+
+    private void updateMap(T key1, T key2, int i) {
+        positionMap.put(key1, (i - 1) / 2);
+        positionMap.put(key2, i);
     }
 
     private void swap(ArrayList<Node<T>> list, int x1, int x2) {
@@ -74,7 +85,6 @@ public class BinaryMinHeapMap<T> {
         list.set(x1, list.get(x2));
         list.set(x2, temp);
     }
-
 
     private void printHeap() {
         int i = 0;
@@ -90,15 +100,18 @@ public class BinaryMinHeapMap<T> {
 
     public static void main(String args[]) {
         BinaryMinHeapMap<String> heap = new BinaryMinHeapMap<String>();
-        heap.addToHeap(3, "Tushar");
-        heap.addToHeap(4, "Ani");
-        heap.addToHeap(8, "Vijay");
-        heap.addToHeap(10, "Pramila");
+        heap.addToHeap(2, "B");
+        heap.addToHeap(4, "C");
+        heap.addToHeap(3, "A");
+        heap.addToHeap(8, "D");
+        heap.addToHeap(1, "E");
+        heap.addToHeap(12, "F");
+        heap.addToHeap(22, "G");
+        heap.addToHeap(0, "H");
+
         heap.printHeap();
         heap.printPositionMap();
     }
-
-
 }
 
 class Node<E> {
@@ -119,3 +132,4 @@ class Node<E> {
         return key;
     }
 }
+
