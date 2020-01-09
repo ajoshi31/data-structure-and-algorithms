@@ -10,7 +10,7 @@ public class GenericGraph<T> {
     private Map<Long, Vertex<T>> allVertices;
 
     public GenericGraph(boolean isDirected) {
-        allVertices = new HashMap<Long, Vertex<T>>();
+        allVertices = new HashMap<>();
         this.isDirected = isDirected;
     }
 
@@ -19,7 +19,7 @@ public class GenericGraph<T> {
     }
 
     public void setDataForVertex(long id, T data) {
-        // Check if the vertex exisit
+        // Check if the vertex exist
         if (allVertices.containsKey(id)) {
             Vertex<T> v = allVertices.get(id);
             v.setData(data);

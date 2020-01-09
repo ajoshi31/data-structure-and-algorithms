@@ -1,7 +1,6 @@
 package GraphAlgorithms.problems;
 
 import GraphAlgorithms.GenericGraph;
-import GraphAlgorithms.ListRepresentation.Graph;
 import GraphAlgorithms.Vertex;
 
 import java.util.HashSet;
@@ -27,11 +26,11 @@ public class TopologicalSort<T> {
         graph.addEdge(5, 6);
         graph.addEdge(6, 8);
 
-        TopologicalSort topologicalSort = new TopologicalSort();
-        Stack result = topologicalSort.topologicalSort(graph);
+        TopologicalSort<Integer> topologicalSort = new TopologicalSort<Integer>();
+        Stack<Vertex<Integer>> result = topologicalSort.topologicalSort(graph);
 
         while (!result.isEmpty()) {
-            Vertex<Integer> ans = (Vertex<Integer>) result.pop();
+            Vertex<Integer> ans = result.pop();
             System.out.print(ans.getId() + " ");
         }
     }
@@ -51,11 +50,11 @@ public class TopologicalSort<T> {
     private void topologicalSortUtil(Vertex<T> vertex, Stack<Vertex<T>> stack, Set<Vertex<T>> visitedVertexSet) {
 
         visitedVertexSet.add(vertex);
-        for (Object adjVertex : vertex.getAdjacentVertex()) {
+        for (Vertex<T> adjVertex : vertex.getAdjacentVertex()) {
             if (visitedVertexSet.contains(adjVertex)) {
                 continue;
             }
-            topologicalSortUtil((Vertex<T>) adjVertex, stack, visitedVertexSet);
+            topologicalSortUtil(adjVertex, stack, visitedVertexSet);
         }
         stack.push(vertex);
     }

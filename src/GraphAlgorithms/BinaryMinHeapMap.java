@@ -45,8 +45,20 @@ public class BinaryMinHeapMap<T> {
         swim(size);
     }
 
-    public boolean containsKey(T key) {
+    private boolean containsKey(T key) {
         return positionMap.containsKey(key);
+    }
+
+    private int getKeyWeight(T key) {
+        if (!containsKey(key)) {
+            try {
+                throw new Exception("Invalid key in the system");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        int pos = positionMap.get(key);
+        return heapArray.get(pos).getWeight();
     }
 
     private Node<T> extractMin() {
@@ -60,7 +72,7 @@ public class BinaryMinHeapMap<T> {
         return endNode;
     }
 
-    public void decreaseVal(T key, int newWeight) {
+    private void decreaseVal(T key, int newWeight) {
         int pos = positionMap.get(key);
         heapArray.get(pos).setWeight(newWeight);
         swim(pos + 1);
@@ -149,6 +161,8 @@ public class BinaryMinHeapMap<T> {
         heap.decreaseVal("B", -1);
         heap.printHeap();
         heap.printPositionMap();
+        int b = heap.getKeyWeight("A");
+        System.out.println(b);
     }
 }
 
@@ -171,7 +185,7 @@ class Node<E> {
     }
 
 
-    public void setWeight(int weight) {
+    void setWeight(int weight) {
         this.weight = weight;
     }
 
