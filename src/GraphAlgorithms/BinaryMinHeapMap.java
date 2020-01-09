@@ -49,11 +49,44 @@ public class BinaryMinHeapMap<T> {
         return positionMap.containsKey(key);
     }
 
-    public void extractMin() {
+    private Node<T> extractMin() {
         int size = heapArray.size();
-        Node<T> endNode = heapArray.get(size - 1);
+        Node<T> endNode = heapArray.get(0);
+        swap(0, size - 1);
+        positionMap.remove(heapArray.get(size - 1).getKey());
         heapArray.remove(size - 1);
         // replace first with the node and heapify or sink
+        sink(0, size);
+        return endNode;
+    }
+
+    public void decreaseVal(T key, int newWeight) {
+        int pos = positionMap.get(key);
+        heapArray.get(pos).setWeight(newWeight);
+        swim(pos + 1);
+    }
+
+
+    private void sink(int i, int N) {
+        int left = i * 2 + 1;
+        int right = i * 2 + 2;
+        int min;
+
+        if (left < N && right < N) {
+            if (heapArray.get(left).getWeight() < heapArray.get(right).getWeight()) {
+                min = left;
+            } else {
+                min = right;
+            }
+            if (heapArray.get(i).getWeight() < heapArray.get(min).getWeight()) {
+                min = i;
+            }
+            if (min != i) {
+                swap(min, i);
+                updateMap(heapArray.get(min).getKey(), min, heapArray.get(i).getKey(), i);
+                sink(min, N);
+            }
+        }
     }
 
     /**
@@ -66,8 +99,8 @@ public class BinaryMinHeapMap<T> {
             Node<T> currentNode = heapArray.get(i);
             Node<T> parent = heapArray.get((i - 1) / 2);
             if (parent.getWeight() > currentNode.getWeight()) {
-                swap(heapArray, i, (i - 1) / 2);
-                updateMap(currentNode.getKey(), parent.getKey(), i);
+                swap(i, (i - 1) / 2);
+                updateMap(currentNode.getKey(), (i - 1) / 2, parent.getKey(), i);
                 i = (i - 1) / 2;
             } else {
                 break;
@@ -75,15 +108,15 @@ public class BinaryMinHeapMap<T> {
         }
     }
 
-    private void updateMap(T key1, T key2, int i) {
-        positionMap.put(key1, (i - 1) / 2);
-        positionMap.put(key2, i);
+    private void updateMap(T key1, int i1, T key2, int i2) {
+        positionMap.put(key1, i1);
+        positionMap.put(key2, i2);
     }
 
-    private void swap(ArrayList<Node<T>> list, int x1, int x2) {
-        Node<T> temp = list.get(x1);
-        list.set(x1, list.get(x2));
-        list.set(x2, temp);
+    private void swap(int x1, int x2) {
+        Node<T> temp = heapArray.get(x1);
+        heapArray.set(x1, heapArray.get(x2));
+        heapArray.set(x2, temp);
     }
 
     private void printHeap() {
@@ -111,6 +144,11 @@ public class BinaryMinHeapMap<T> {
 
         heap.printHeap();
         heap.printPositionMap();
+        Node<String> a = heap.extractMin();
+        System.out.println(a.getKey() + " - " + a.getWeight());
+        heap.decreaseVal("B", -1);
+        heap.printHeap();
+        heap.printPositionMap();
     }
 }
 
@@ -131,5 +169,10 @@ class Node<E> {
     public E getKey() {
         return key;
     }
-}
 
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+}
