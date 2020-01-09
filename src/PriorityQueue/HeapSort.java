@@ -14,13 +14,13 @@ public class HeapSort {
             maxHeapify(inputArray, i, N);
         }
 //Sorting
-//        int heapSize = N;
-//        //Now delete max and put ithe last element in the root and then hapify that element, and put max in the last element
-//        for (int i = N - 1; i >= 1; i--) {
-//            swap(0, i); // Swap last element with the first max element
-//            heapSize = heapSize - 1;
-//            maxHeapify(inputArray, 0, heapSize);
-//        }
+        int heapSize = N;
+        //Now delete max and put ithe last element in the root and then hapify that element, and put max in the last element
+        for (int i = N - 1; i >= 1; i--) {
+            swap(0, i); // Swap last element with the first max element
+            heapSize = heapSize - 1;
+            maxHeapify(inputArray, 0, heapSize);
+        }
 
         System.out.println("Sorted Array");
         System.out.println(Arrays.toString(inputArray));
@@ -65,6 +65,8 @@ public class HeapSort {
 
         System.out.println("Sorted Array");
         System.out.println(Arrays.toString(inputArray));
+        heapSort();
+
 
     }
 

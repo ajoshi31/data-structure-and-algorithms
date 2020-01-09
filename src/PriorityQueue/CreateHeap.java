@@ -48,7 +48,7 @@ public class CreateHeap {
             }
             if (min != i) {
                 swap(min, i);
-                maxHeapify(A, min, N);
+                minHeapify(A, min, N);
             }
         }
 
