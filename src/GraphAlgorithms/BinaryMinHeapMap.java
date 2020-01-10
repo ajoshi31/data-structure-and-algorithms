@@ -29,7 +29,7 @@ public class BinaryMinHeapMap<T> {
     /**
      * Constructor
      */
-    private BinaryMinHeapMap() {
+    public BinaryMinHeapMap() {
         this.heapArray = new ArrayList<Node<T>>();
         this.positionMap = new HashMap<>();
     }
@@ -37,7 +37,7 @@ public class BinaryMinHeapMap<T> {
     /**
      * Operations
      */
-    private void addToHeap(int weight, T key) {
+    public void addToHeap(int weight, T key) {
         Node<T> node = new Node<T>(weight, key);
         heapArray.add(node);
         int size = heapArray.size();
@@ -45,11 +45,11 @@ public class BinaryMinHeapMap<T> {
         swim(size);
     }
 
-    private boolean containsKey(T key) {
+    public boolean containsKey(T key) {
         return positionMap.containsKey(key);
     }
 
-    private int getKeyWeight(T key) {
+    public int getKeyWeight(T key) {
         if (!containsKey(key)) {
             try {
                 throw new Exception("Invalid key in the system");
@@ -61,23 +61,26 @@ public class BinaryMinHeapMap<T> {
         return heapArray.get(pos).getWeight();
     }
 
-    private Node<T> extractMin() {
+    public Node<T> extractMin() {
         int size = heapArray.size();
         Node<T> endNode = heapArray.get(0);
         swap(0, size - 1);
         positionMap.remove(heapArray.get(size - 1).getKey());
         heapArray.remove(size - 1);
         // replace first with the node and heapify or sink
-        sink(0, size);
+        sink(0, size - 1);
         return endNode;
     }
 
-    private void decreaseVal(T key, int newWeight) {
+    public void decreaseVal(T key, int newWeight) {
         int pos = positionMap.get(key);
         heapArray.get(pos).setWeight(newWeight);
         swim(pos + 1);
     }
 
+    public boolean empty() {
+        return heapArray.size() == 0;
+    }
 
     private void sink(int i, int N) {
         int left = i * 2 + 1;

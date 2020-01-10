@@ -18,6 +18,11 @@ public class GenericGraph<T> {
         return allVertices.values();
     }
 
+
+    public Vertex<T> getVertex(long id) {
+        return allVertices.get(id);
+    }
+
     public void setDataForVertex(long id, T data) {
         // Check if the vertex exist
         if (allVertices.containsKey(id)) {
@@ -27,15 +32,19 @@ public class GenericGraph<T> {
     }
 
     public void addEdge(long src, long dest) {
+        addEdge(src, dest, 0);
+    }
 
+
+    void addEdge(long src, long dest, int weight) {
         Vertex<T> v1 = avoidDuplicateVertex(src);
         Vertex<T> v2 = avoidDuplicateVertex(dest);
-
-        v1.addAdjacentVertex(v2);
+        v1.addAdjacentVertex(weight, v2);
         if (!isDirected) {
-            v2.addAdjacentVertex(v1);
+            v2.addAdjacentVertex(weight, v1);
         }
     }
+
 
     private Vertex<T> avoidDuplicateVertex(long vertexId) {
         Vertex<T> v;
@@ -47,4 +56,5 @@ public class GenericGraph<T> {
         }
         return v;
     }
+
 }

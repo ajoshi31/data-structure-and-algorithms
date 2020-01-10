@@ -27,6 +27,7 @@ public class ShortestPathUnweighted {
         while (!queue.isEmpty()) {
             Vertex<Integer> v1 = queue.poll();
             for (Vertex<Integer> adjVertex : v1.getAdjacentVertex()) {
+                // If not visited till yet
                 if (vertexDistanceMap.get(adjVertex).minDistance == -1) {
                     vertexDistanceMap.get(adjVertex).minDistance = vertexDistanceMap.get(v1).minDistance + 1;
                     vertexDistanceMap.get(adjVertex).parentVertex = v1;
@@ -57,6 +58,10 @@ public class ShortestPathUnweighted {
 
             System.out.println("Min distance to " + a.getId() + " is " + b.minDistance + " via " + b.parentVertex.id);
         }
+
+        //Min distance from Src to Dest and its path
+
+
     }
 }
 
