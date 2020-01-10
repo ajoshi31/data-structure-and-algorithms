@@ -86,7 +86,6 @@ public class BinaryMinHeapMap<T> {
         int left = i * 2 + 1;
         int right = i * 2 + 2;
         int min;
-
         if (left < N && right < N) {
             if (heapArray.get(left).getWeight() < heapArray.get(right).getWeight()) {
                 min = left;
@@ -124,6 +123,8 @@ public class BinaryMinHeapMap<T> {
     }
 
     private void updateMap(T key1, int i1, T key2, int i2) {
+        positionMap.remove(key1);
+        positionMap.remove(key2);
         positionMap.put(key1, i1);
         positionMap.put(key2, i2);
     }
@@ -134,7 +135,7 @@ public class BinaryMinHeapMap<T> {
         heapArray.set(x2, temp);
     }
 
-    private void printHeap() {
+    public void printHeap() {
         int i = 0;
         for (Node<T> n : heapArray) {
             System.out.println(n.getWeight() + " " + n.getKey() + " at : " + i++);
@@ -142,30 +143,39 @@ public class BinaryMinHeapMap<T> {
         System.out.println("");
     }
 
-    private void printPositionMap() {
+    public void printPositionMap() {
         System.out.println(positionMap);
     }
 
     public static void main(String args[]) {
         BinaryMinHeapMap<String> heap = new BinaryMinHeapMap<String>();
         heap.addToHeap(2, "B");
-        heap.addToHeap(4, "C");
-        heap.addToHeap(3, "A");
+        heap.addToHeap(8, "C");
+        heap.addToHeap(8, "A");
         heap.addToHeap(8, "D");
-        heap.addToHeap(1, "E");
-        heap.addToHeap(12, "F");
-        heap.addToHeap(22, "G");
-        heap.addToHeap(0, "H");
+
 
         heap.printHeap();
         heap.printPositionMap();
         Node<String> a = heap.extractMin();
-        System.out.println(a.getKey() + " - " + a.getWeight());
-        heap.decreaseVal("B", -1);
+        heap.decreaseVal("C", -1);
         heap.printHeap();
         heap.printPositionMap();
-        int b = heap.getKeyWeight("A");
-        System.out.println(b);
+        Node<String> b = heap.extractMin();
+        heap.printHeap();
+        heap.printPositionMap();
+        Node<String> c = heap.extractMin();
+        heap.printHeap();
+        heap.printPositionMap();
+
+        System.out.println("----------------");
+        System.out.println(a.getKey() + " - " + a.getWeight());
+        System.out.println(b.getKey() + " - " + b.getWeight());
+        System.out.println(c.getKey() + " - " + c.getWeight());
+        int d = heap.getKeyWeight("D");
+        System.out.println(d);
+        heap.printHeap();
+        heap.printPositionMap();
     }
 }
 

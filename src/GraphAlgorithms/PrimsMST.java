@@ -9,11 +9,8 @@ public class PrimsMST {
     public static void main(String args[]) {
         GenericGraph<Integer> genericGraph = new GenericGraph<>(false);
 
-        genericGraph.addEdge(1, 2);
-        genericGraph.addEdge(2, 3);
-        genericGraph.addEdge(1, 3);
-        genericGraph.addEdge(2, 4);
-        genericGraph.addEdge(3, 4);
+        genericGraph.addEdge(1, 2, 10);
+        genericGraph.addEdge(2, 3, 5);
         PrimsMST primMST = new PrimsMST();
         Map<Vertex<Integer>, Vertex<Integer>> map = primMST.primsMST(genericGraph);
 
@@ -21,10 +18,8 @@ public class PrimsMST {
             Map.Entry mapElement = (Map.Entry) o;
             Vertex<Integer> a = (Vertex<Integer>) mapElement.getKey();
             ShortestPathUnweighted.Node b = (ShortestPathUnweighted.Node) mapElement.getValue();
-
             System.out.println("Min distance to " + a.getId() + " is " + b.minDistance + " via " + b.parentVertex.id);
         }
-
     }
 
     public Map<Vertex<Integer>, Vertex<Integer>> primsMST(GenericGraph<Integer> graph) {
@@ -60,12 +55,10 @@ public class PrimsMST {
                         edgeMap.put(currentVertex, v1);
                     }
                 }
-
             }
-
-
+            minHeap.printHeap();
+            minHeap.printPositionMap();
         }
-
         return result;
 
     }
