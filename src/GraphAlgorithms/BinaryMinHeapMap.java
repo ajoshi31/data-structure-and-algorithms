@@ -65,6 +65,7 @@ public class BinaryMinHeapMap<T> {
         int size = heapArray.size();
         Node<T> endNode = heapArray.get(0);
         swap(0, size - 1);
+        updateMap(heapArray.get(0).getKey(), 0, heapArray.get(size-1).getKey(), size-1);
         positionMap.remove(heapArray.get(size - 1).getKey());
         heapArray.remove(size - 1);
         // replace first with the node and heapify or sink
@@ -151,8 +152,8 @@ public class BinaryMinHeapMap<T> {
         BinaryMinHeapMap<String> heap = new BinaryMinHeapMap<String>();
         heap.addToHeap(2, "B");
         heap.addToHeap(8, "C");
-        heap.addToHeap(8, "A");
-        heap.addToHeap(8, "D");
+        heap.addToHeap(12, "A");
+        heap.addToHeap(14, "D");
 
 
         heap.printHeap();
@@ -172,8 +173,8 @@ public class BinaryMinHeapMap<T> {
         System.out.println(a.getKey() + " - " + a.getWeight());
         System.out.println(b.getKey() + " - " + b.getWeight());
         System.out.println(c.getKey() + " - " + c.getWeight());
-        int d = heap.getKeyWeight("D");
-        System.out.println(d);
+//        int d = heap.getKeyWeight("D");
+//        System.out.println(d);
         heap.printHeap();
         heap.printPositionMap();
     }

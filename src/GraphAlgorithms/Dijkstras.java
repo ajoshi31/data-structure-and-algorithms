@@ -10,7 +10,7 @@ public class Dijkstras {
         Vertex<T> parentVertex = null;
     }
 
-    public Map<Vertex<Integer>, Node<Integer>> dijkstraShortestPath(GenericGraph<Integer> graph, Vertex<Integer> sourcePoint) {
+    private Map<Vertex<Integer>, Node<Integer>> dijkstraShortestPath(GenericGraph<Integer> graph, Vertex<Integer> sourcePoint) {
 
         BinaryMinHeapMap<Vertex<Integer>> heapMap = new BinaryMinHeapMap<>();
         Map<Vertex<Integer>, Node<Integer>> distancePathMap = new HashMap<>();
@@ -70,7 +70,6 @@ public class Dijkstras {
         Vertex<Integer> sourceVertex = graph.getVertex(2);
         Dijkstras dijkstras = new Dijkstras();
 
-
         Map<Vertex<Integer>, Node<Integer>> map = dijkstras.dijkstraShortestPath(graph, sourceVertex);
 
         System.out.println("Distance of nodes from " + 2);
@@ -81,8 +80,5 @@ public class Dijkstras {
 
             System.out.println("Min distance to " + a.getId() + " is " + b.minDistance + " via " + b.parentVertex.id);
         }
-
-
     }
-
 }
