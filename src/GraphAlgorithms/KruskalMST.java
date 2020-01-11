@@ -70,7 +70,6 @@ public class KruskalMST {
         List<Edge<Integer>> result = kruskalMST.kruskalMst(graph);
 
         for (Edge<Integer> edge : result) {
-
             System.out.println(edge.toString());
         }
 

@@ -1,6 +1,20 @@
 package GraphAlgorithms;
 
 public class Edge<T> {
+
+
+    private Vertex v1;
+    private Vertex v2;
+    private int weight;
+    private boolean isDirected;
+
+    Edge(Vertex v1, Vertex v2, int weight, boolean isDirected) {
+        this.v1 = v1;
+        this.v2 = v2;
+        this.weight = weight;
+        this.isDirected = isDirected;
+    }
+
     public Vertex getV1() {
         return v1;
     }
@@ -16,19 +30,6 @@ public class Edge<T> {
     public boolean isDirected() {
         return isDirected;
     }
-
-    private Vertex v1;
-    private Vertex v2;
-    private int weight;
-    private boolean isDirected;
-
-    Edge(Vertex v1, Vertex v2, int weight, boolean isDirected) {
-        this.v1 = v1;
-        this.v2 = v2;
-        this.weight = weight;
-        this.isDirected = isDirected;
-    }
-
 
     @Override
     public String toString() {
