@@ -7,7 +7,7 @@ Clone this repository and install Java.
 
 
 ## Contribution
-Please contribute to this repository to help it make better. Any change like new question, code improvement, doc improvement, new language imlementation is very welcome. Just send me the pull request and I will review it and merge if it clears few criteria.
+Please contribute to this repository to help it make better. Any change like new question, code improvement, doc improvement, new language implementation is very welcome. Just send me the pull request and I will review it and merge if it clears few criteria.
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## Topics
