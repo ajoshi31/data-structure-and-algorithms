@@ -5,21 +5,6 @@ import java.util.Map;
 
 public class PrimsMST {
 
-    public static void main(String args[]) {
-        GenericGraph<Integer> genericGraph = new GenericGraph<>(false);
-
-        genericGraph.addEdge(1, 2, 10);
-        genericGraph.addEdge(2, 3, 5);
-        PrimsMST primMST = new PrimsMST();
-        Map<Vertex<Integer>, Vertex<Integer>> map = primMST.primsMST(genericGraph);
-
-        for (Object o : map.entrySet()) {
-            Map.Entry mapElement = (Map.Entry) o;
-            Vertex<Integer> a = (Vertex<Integer>) mapElement.getKey();
-            Vertex<Integer> b = (Vertex<Integer>) mapElement.getValue();
-            System.out.println("Source: " + b.id + " -> Dest: " + a.id);
-        }
-    }
 
     private Map<Vertex<Integer>, Vertex<Integer>> primsMST(GenericGraph<Integer> graph) {
 
@@ -51,4 +36,21 @@ public class PrimsMST {
         }
         return result;
     }
+
+    public static void main(String args[]) {
+        GenericGraph<Integer> genericGraph = new GenericGraph<>(false);
+
+        genericGraph.addEdge(1, 2, 10);
+        genericGraph.addEdge(2, 3, 5);
+        PrimsMST primMST = new PrimsMST();
+        Map<Vertex<Integer>, Vertex<Integer>> map = primMST.primsMST(genericGraph);
+
+        for (Object o : map.entrySet()) {
+            Map.Entry mapElement = (Map.Entry) o;
+            Vertex<Integer> a = (Vertex<Integer>) mapElement.getKey();
+            Vertex<Integer> b = (Vertex<Integer>) mapElement.getValue();
+            System.out.println("Source: " + b.id + " -> Dest: " + a.id);
+        }
+    }
+
 }
