@@ -10,7 +10,7 @@ public class BellmanFordShortestPath {
 
     }
 
-    public Map<Vertex<Integer>, Integer> bellmanFordShortestPath(GenericGraph<Integer> graph, Vertex<Integer> sourceVertex) {
+    private Map<Vertex<Integer>, Integer> bellmanFordShortestPath(GenericGraph<Integer> graph, Vertex<Integer> sourceVertex) {
 
         Map<Vertex<Integer>, Integer> vertexDistanceMap = new HashMap<>();
         Map<Vertex<Integer>, Vertex<Integer>> parentPathMap = new HashMap<>();
@@ -45,13 +45,11 @@ public class BellmanFordShortestPath {
             }
         }
         return vertexDistanceMap;
-
     }
 
     public static void main(String args[]) {
 
         GenericGraph<Integer> graph = new GenericGraph<>(false);
-
         graph.addEdge(0, 3, 8);
         graph.addEdge(0, 1, 4);
         graph.addEdge(0, 2, 5);
@@ -67,5 +65,4 @@ public class BellmanFordShortestPath {
         System.out.println("Distance of nodes from " + startVertex.id);
         System.out.println(distance);
     }
-
 }
