@@ -1,6 +1,6 @@
-# Data Structure and Algorithms - nthexam.com
+# Data Structure and Algorithms - for Interview Prep, GATE-IT/CS, Competitive Coding
 
-This project is for deep learning of algorithms and data structures and coding for interview preparation. This is under [nthexam.com](https://nthexam.com). It is under developemnt and any contributions are appreciated. Most of the code is in JAVA and other language implementation are welcomed. 
+This project is for deep learning of algorithms and data structures and coding for interview preparation. It is under developemnt and any contributions are appreciated. Most of the code is in JAVA and other language implementation are welcomed. 
 
 ## Installation
 Clone this repository and install Java.  
@@ -21,4 +21,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## Contributors
 
-* [Atul Joshi](https://www.linkedin.com/in/atul-joshi/)
+* [Atul Joshi](https://www.linkedin.com/in/atul-joshi/) co founder [nthexam.com](https://nthexam.com)
