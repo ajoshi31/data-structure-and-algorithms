@@ -28,7 +28,6 @@ public class BellmanFordShortestPath {
 
                 Vertex u = edge.getV1();
                 Vertex v = edge.getV2();
-
                 if (vertexDistanceMap.get(v) > vertexDistanceMap.get(u) + edge.getWeight()) {
                     vertexDistanceMap.put(v, vertexDistanceMap.get(u) + edge.getWeight());
                     parentPathMap.put(v, u);
@@ -48,7 +47,6 @@ public class BellmanFordShortestPath {
     }
 
     public static void main(String args[]) {
-
         GenericGraph<Integer> graph = new GenericGraph<>(false);
         graph.addEdge(0, 3, 8);
         graph.addEdge(0, 1, 4);

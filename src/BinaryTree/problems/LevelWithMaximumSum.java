@@ -24,6 +24,5 @@ public class LevelWithMaximumSum {
         levelWithMaximumSumUtil(node.getLeft(), level + 1);
         levelWithMaximumSumUtil(node.getRight(), level + 1);
     }
-
 }
 
