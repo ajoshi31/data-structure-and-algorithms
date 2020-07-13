@@ -4,7 +4,7 @@ import java.util.Hashtable;
 
 public class FirstRepeatedNumber {
     public static void main(String args[]) {
-        int[] array = {12, 14, 15, 16, 3, 2, 2, 2, 4, 5, 3, 3, 7};
+        int[] array = {12, 14, 15, 16, 3, 2, 2, 2, 4, 5, 3, 12, 7};
         int max = Integer.MIN_VALUE;
         int index = 0;
         Hashtable<Integer, Integer> hash = new Hashtable<>();

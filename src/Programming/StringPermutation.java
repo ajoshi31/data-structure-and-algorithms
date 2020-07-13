@@ -5,12 +5,13 @@ public class StringPermutation {
         String str = "abc";
         permutation(str);
     }
+
     private static void permutation(String str) {
         permutation(str, "");
     }
 
     private static void permutation(String str, String prefix) {
-        System.out.println("str : " + str + " prefix : " + prefix);
+        //System.out.println("str : " + str + " prefix : " + prefix);
         if (str.length() == 0) {
             System.out.println("prefix - " + prefix);
         } else {

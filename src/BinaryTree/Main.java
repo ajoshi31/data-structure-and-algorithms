@@ -12,7 +12,8 @@ public class Main {
 
         //Problem Statement To Solve
         ProblemStatement problemStatement = new ProblemStatement();
-        problemStatement.functionToRun("PROBLEM_MORRIS", root);
+        problemStatement.functionToRun("PROBLEM_REVERSE_BINARY_TREE", root);
+
     }
 
 }

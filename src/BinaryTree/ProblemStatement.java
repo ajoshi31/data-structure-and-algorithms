@@ -131,8 +131,8 @@ class ProblemStatement {
             }
 
             case PROBLEM29: {
-//                Inorder sequence: D B E A F C
-//                Preorder sequence: A B D E C F
+//              Inorder sequence: D B E A F C
+//              Preorder sequence: A B D E C F
                 int in[] = {4, 2, 5, 1, 6, 3};
                 int pre[] = {1, 2, 4, 5, 3, 6};
                 new BTreeUsingInAndPreOrder().generateBTFromInAndPreOrderTraversal(pre, in);
@@ -154,6 +154,14 @@ class ProblemStatement {
                 BinaryTreeTraversal btt = new BinaryTreeTraversal();
                 System.out.println("\n\nPrint the pre order traversal");
                 btt.preOrderTraversal(node);
+                break;
+            }
+
+            case PROBLEM_REVERSE_BINARY_TREE: {
+
+                LevelOrderTraversalLevelWise levelOrderTraversal = new LevelOrderTraversalLevelWise();
+                System.out.println("\n\nPrint the level order traversal");
+                levelOrderTraversal.LevelOrderTraversalLevelWise(node);
                 break;
             }
 
@@ -191,7 +199,8 @@ class ProblemStatement {
         PROBLEM38,
         PROBLEM33,
         PROBLEM34,
-        PROBLEM_MORRIS
+        PROBLEM_MORRIS,
+        PROBLEM_REVERSE_BINARY_TREE
     }
 }
 

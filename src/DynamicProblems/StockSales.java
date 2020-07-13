@@ -28,7 +28,7 @@ public class StockSales {
     }
 
     public static void main(String args[]) {
-        int price[] = {10, 20, 5, 30, 40, 50, 100}; //10+70
+        int price[] = {10, 20, 5, 30, 40, 50, 100, 5, 40}; //10+70
         int k = 2;
         int n = price.length;
         System.out.println("\nMaximum Profit = " + maxProfit(price, n, k));
