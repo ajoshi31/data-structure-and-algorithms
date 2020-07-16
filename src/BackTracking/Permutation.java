@@ -13,15 +13,14 @@ public class Permutation {
             System.out.println(str);
         else {
             for (int i = l; i <= r; i++) {
-                str = swap(str, l, i); // eg abcd (-> abdc)
-                permute(str, l + 1, r);
+                str = swap(str, l, i); // eg abcd (-> abdc) // Validate and Set the value using some utility function
+                permute(str, l + 1, r); // check for other options
                 // Backtracking to make it original string that was before going to recursion
                 // abdc (-> abcd)
-                str = swap(str, l, i);
+                str = swap(str, l, i);  // Backtrack
             }
         }
     }
-
 
     private String swap(String a, int i, int j) {
         char temp;
@@ -31,5 +30,4 @@ public class Permutation {
         charArray[j] = temp;
         return String.valueOf(charArray);
     }
-
 }
