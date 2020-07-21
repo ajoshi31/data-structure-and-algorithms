@@ -1,4 +1,4 @@
-package DynamicProblems;
+package DivideAndConquer;
 
 public class SkyLineProblem {
 

@@ -1,5 +1,7 @@
 package Programming.Arrays;
 
+import org.junit.Test;
+
 /**
  * Server receives a package of N incoming request, handling ith request will take the A[i] time.
  * Load balancer has to drop two acquired request and distribute the rest of them between three workers in such a way that
@@ -48,13 +50,10 @@ public class LoadBalancingEqualSumSubArray {
         for (int item : input) {
             sum = sum + item;
         }
-
         int left = 0;
         int right = input.length - 1;
         int sumLeft = 0, sumRight = 0, sumMiddle = 0;
-
         while (left < right) {
-
             if ((sumLeft + input[left]) * 3 < sum) {
                 sumLeft += input[left];
                 left++;
@@ -70,7 +69,6 @@ public class LoadBalancingEqualSumSubArray {
                     return false;
                 }
             }
-
         }
 
         for (int i = left; i <= right; i++) {
@@ -79,4 +77,7 @@ public class LoadBalancingEqualSumSubArray {
 
         return sumMiddle == sumRight;
     }
+
+
 }
+
