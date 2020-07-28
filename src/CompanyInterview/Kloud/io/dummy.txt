@@ -1,0 +1,106 @@
+//sum(a,b) => a + b
+
+// let sum = function(a,b) => {
+//   return a+b
+// }
+
+// sum(a)(b) => a + b
+
+// let sum = function(a){
+//   return function(b) {
+//     return a + b;
+//   }
+// }
+
+// console.log(sum(1)(2));
+
+// //sum(a)(b)(c)(d)
+// // function originalSum(a,b,c,d) { return a + b + c + d }
+// // function curriedSum = curry(originalSum)
+// // curriedSum(a)(b)(c)(d)
+
+
+// let cur = function(originalSum) {
+
+//   return function(...args) => {
+//     let parameterLength = args.length;
+//     let sum = 0;
+//     return sum(...originalSum)()
+//     for (let i =0; i<parameterLength ; i++){
+//      sum = sum + args[i]
+//     }
+//    return sum;
+//   }
+
+//   // do some iterations here
+
+// }
+
+// console.log(cur(1)(2));
+
+
+// let sum = function(a){
+//   return function(b) {
+//     return a + b;
+//   }
+// }
+
+
+
+/// promise
+// function sum(a,b) => Promise (a + b)
+
+
+
+// sum(5,18).then(
+//     function(resolveRes){
+//         console.log(resolveRes)
+//     }
+// ).catch()
+
+
+// async function abc(a,b){
+
+//   let result = await sum(a,b);
+
+//   return result
+
+// }
+
+
+// // console.log(sum(1,3) + sum ( 2,5))
+// let sum = function(a,b){
+//   return new Promise(function(resolve, reject){
+//     resolve( a + b);
+//  })
+// }
+
+// Promise.all([sum(1,2), sum(3,2)])
+//     .then(results => {
+//         const total = results.reduce((p, c) => p + c);
+//         console.log(`Results: ${results}`);
+//         console.log(`Total: ${total}`);
+//     });
+
+
+function curry(func) {
+  return function curried(...args) {
+    console.log('length', func.length)
+    if (args.length >= func.length) {
+      return func.apply(this, args);
+    } else {
+      return function(...args2) {
+        return curried.apply(this, args.concat(args2));
+      }
+    }
+  };
+}
+
+function sum(a, b, c) {
+  return a + b + c;
+}
+
+let curriedSum = curry(sum);
+
+// console.log(curriedSum(1)(2)(3))
+console.log(curriedSum(1,2,3)(3))
