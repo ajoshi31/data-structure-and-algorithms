@@ -1,4 +1,4 @@
-package Programming;
+package Programming.Strings;
 
 public class StringPermutation {
     public static void main(String args[]) {

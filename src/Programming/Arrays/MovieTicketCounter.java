@@ -36,29 +36,28 @@ public class MovieTicketCounter {
         }
         int result = movieTicketUtil(arr, length, position);
         System.out.println(result);
-
     }
 
     private static int movieTicketUtil(int[] input, int length, int position) {
 
         int sum = 0;
+        int number = input[position];
         for (int i = 0; i < length; i++) {
             if (position >= i) {
-                if (input[position] >= input[i]) {
+                if (number >= input[i]) {
                     sum = sum + input[i];
                 } else {
-                    sum = sum + input[position];
+                    sum = sum + number;
                 }
             } else {
-                if (input[position] >= input[i]) {
+                if (number >= input[i]) {
                     sum = sum + input[i] - 1;
                 } else {
-                    sum = sum + input[position];
+                    sum = sum + number;
                 }
             }
             System.out.println(sum);
         }
         return sum;
     }
-
 }
