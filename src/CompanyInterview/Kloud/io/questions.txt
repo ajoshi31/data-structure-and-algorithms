@@ -1,4 +1,4 @@
 Q1: Make the sum ES6 function // sum(a,b) => a+b.
-Q2. Make sum using advance currying
+Q2. Make sum using advance currying // https://theanubhav.com/2019/02/03/js-currying-in-interview/
 Q3. Make the promise function for sum(a,b)
 Q4. Aggregate function for the promise all
