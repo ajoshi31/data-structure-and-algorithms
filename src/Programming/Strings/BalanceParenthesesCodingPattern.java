@@ -7,7 +7,7 @@ import java.util.Stack;
 public class BalanceParenthesesCodingPattern {
 
     public static void main(String args[]) {
-        String string = "{[]()(())}";
+        String string = "{}[]";
         boolean valueRes = balanceUtil(string);
 
         if (valueRes) {
@@ -18,7 +18,7 @@ public class BalanceParenthesesCodingPattern {
     }
 
     private static boolean balanceUtil(String input) {
-        Stack<Character> stack = new Stack<Character>();
+        Stack<Character> stack = new Stack<>();
         for (int i = 0; i < input.length(); i++) {
             char x = input.charAt(i);
             char pop;
@@ -32,27 +32,20 @@ public class BalanceParenthesesCodingPattern {
 
             switch (x) {
                 case '}':
-                    pop = stack.pop();
-                    if (pop == '(' || pop == '[') {
+                    if (stack.pop() != '{')
                         return false;
-                    }
                     break;
 
                 case ']':
-                    pop = stack.pop();
-                    if (pop == '(' || pop == '{') {
+                    if (stack.pop() != '[')
                         return false;
-                    }
                     break;
 
                 case ')':
-                    pop = stack.pop();
-                    if (pop == '{' || pop == '[') {
+                    if (stack.pop() != '(')
                         return false;
-                    }
                     break;
             }
-
         }
         return (stack.isEmpty());
     }
