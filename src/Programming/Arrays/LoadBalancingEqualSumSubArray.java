@@ -1,6 +1,5 @@
 package Programming.Arrays;
 
-import org.junit.Test;
 
 /**
  * Server receives a package of N incoming request, handling ith request will take the A[i] time.
