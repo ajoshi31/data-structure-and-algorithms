@@ -7,18 +7,15 @@ import java.util.Map;
 
 public class Vertex<T> {
 
-
     long id;
-    private T data;
-    private Map<Vertex<T>, Integer> edgeMap = new HashMap<>();
-    private List<Vertex<T>> adjacentVertex = new ArrayList<>();
+    private final Map<Vertex<T>, Integer> edgeMap = new HashMap<>();
+    private final List<Vertex<T>> adjacentVertex = new ArrayList<>();
 
     Vertex(long id) {
         this.id = id;
     }
 
     public void setData(T data) {
-        this.data = data;
     }
 
     public long getId() {
@@ -30,7 +27,7 @@ public class Vertex<T> {
         adjacentVertex.add(v);
     }
 
-    int getWeigth(Vertex<T> dest) {
+    int getWeight(Vertex<T> dest) {
         return edgeMap.get(dest);
     }
 

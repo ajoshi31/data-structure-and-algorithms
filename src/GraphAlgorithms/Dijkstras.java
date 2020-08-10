@@ -31,7 +31,7 @@ public class Dijkstras {
             GraphAlgorithms.Node<Vertex<Integer>> node = heapMap.extractMin();
             Vertex<Integer> currentNode = node.getKey();
             for (Vertex<Integer> v : currentNode.getAdjacentVertex()) {
-                int distance = distancePathMap.get(currentNode).minDistance + currentNode.getWeigth(v);
+                int distance = distancePathMap.get(currentNode).minDistance + currentNode.getWeight(v);
                 // If unvisited add it to the heap and update the distsance map
                 if (distancePathMap.get(v).minDistance == -1) {
                     distancePathMap.get(v).minDistance = distance;

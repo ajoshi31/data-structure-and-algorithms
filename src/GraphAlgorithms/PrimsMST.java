@@ -1,10 +1,8 @@
 package GraphAlgorithms;
-
 import java.util.HashMap;
 import java.util.Map;
 
 public class PrimsMST {
-
 
     private Map<Vertex<Integer>, Vertex<Integer>> primsMST(GenericGraph<Integer> graph) {
 
@@ -27,8 +25,8 @@ public class PrimsMST {
             for (Vertex<Integer> v1 : currentVertex.getAdjacentVertex()) {
                 if (minHeap.containsKey(v1)) {
                     // if weight of the v1 < in map update
-                    if (currentVertex.getWeigth(v1) < minHeap.getKeyWeight(v1)) {
-                        minHeap.decreaseVal(v1, currentVertex.getWeigth(v1));
+                    if (currentVertex.getWeight(v1) < minHeap.getKeyWeight(v1)) {
+                        minHeap.decreaseVal(v1, currentVertex.getWeight(v1));
                         edgeMap.put(v1, currentVertex);
                     }
                 }

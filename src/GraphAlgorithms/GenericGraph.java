@@ -5,8 +5,6 @@ import java.util.*;
 public class GenericGraph<T> {
 
     private boolean isDirected;
-
-
     private List<Edge<T>> allEdges;
     private Map<Long, Vertex<T>> allVertices;
 
@@ -14,13 +12,11 @@ public class GenericGraph<T> {
         allVertices = new HashMap<>();
         allEdges = new ArrayList<>();
         this.isDirected = isDirected;
-
     }
 
     public Collection<Vertex<T>> getAllVertices() {
         return allVertices.values();
     }
-
 
     public Vertex<T> getVertex(long id) {
         return allVertices.get(id);
@@ -42,7 +38,6 @@ public class GenericGraph<T> {
         addEdge(src, dest, 0);
     }
 
-
     void addEdge(long src, long dest, int weight) {
         Vertex<T> v1 = avoidDuplicateVertex(src);
         Vertex<T> v2 = avoidDuplicateVertex(dest);
@@ -52,7 +47,6 @@ public class GenericGraph<T> {
             v2.addAdjacentVertex(weight, v1);
         }
     }
-
 
     private Vertex<T> avoidDuplicateVertex(long vertexId) {
         Vertex<T> v;
@@ -64,5 +58,4 @@ public class GenericGraph<T> {
         }
         return v;
     }
-
 }

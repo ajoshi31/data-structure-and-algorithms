@@ -1,12 +1,10 @@
 package Sorting;
-
 import java.util.Arrays;
 
 class BubbleSort {
     void bubbleSort(int[] array, int n) {
 
         for (int i = 0; i < n - 1; i++) {
-
             boolean swapBool = false;
             for (int j = 0; j < n - i - 1; j++) {
                 if (array[j] > array[j + 1]) {

@@ -2,7 +2,6 @@ package GraphAlgorithms;
 
 public class Edge<T> {
 
-
     private Vertex v1;
     private Vertex v2;
     private int weight;
