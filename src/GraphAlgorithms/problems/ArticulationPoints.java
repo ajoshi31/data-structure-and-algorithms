@@ -57,21 +57,6 @@ public class ArticulationPoints {
         // initial vertex
         int vertex = 4;
         DFSTree(vertex, graph, visited, articulationPoints, parent, descTime, low);
-
-        Set<Map.Entry<Integer, Integer>> entries = descTime.entrySet();
-
-        for (Map.Entry<Integer, Integer> entry : entries) {
-            System.out.print("key: " + entry.getKey());
-            System.out.println(", Value: " + entry.getValue());
-        }
-        System.out.println("---");
-
-        Set<Map.Entry<Integer, Integer>> lows = low.entrySet();
-        for (Map.Entry<Integer, Integer> entry : lows) {
-            System.out.print("key: " + entry.getKey());
-            System.out.println(", Value: " + entry.getValue());
-        }
-
         return articulationPoints;
     }
 
@@ -102,6 +87,9 @@ public class ArticulationPoints {
                 childCount++;
                 DFSTree(adjVertex, graph, visited, articulationPoints, parent, desc, low);
                 if (desc.get(vertex) <= low.get(adjVertex)) {
+                    if (!desc.get(vertex).equals(low.get(adjVertex))) {
+                        System.out.println(vertex + " - " + adjVertex); // to find bridge
+                    }
                     isArticulationPoint = true;
                 } else {
                     low.put(vertex, Math.min(low.get(adjVertex), low.get(vertex)));
@@ -114,5 +102,31 @@ public class ArticulationPoints {
                 (parent.get(vertex) != null && isArticulationPoint)) {
             articulationPoints.add(vertex);
         }
+    }
+}
+
+class Bridge {
+    private int u;
+    private int v;
+
+    public Bridge(int u, int v) {
+        this.u = u;
+        this.v = v;
+    }
+
+    public int getU() {
+        return u;
+    }
+
+    public void setU(int u) {
+        this.u = u;
+    }
+
+    public int getV() {
+        return v;
+    }
+
+    public void setV(int v) {
+        this.v = v;
     }
 }
