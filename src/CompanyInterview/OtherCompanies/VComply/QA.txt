@@ -1,0 +1,3 @@
+Q1: Minumum shop spend problem : Backtracking
+   https://github.com/ajoshi31/data-structure-and-algorithms/blob/baa55cd09d09f42923bceb8db9b85a70903df495/src/BackTracking/MinumumShopSpent.java
+Q2: Articulation points : Backedge Problem for crictcal vertex

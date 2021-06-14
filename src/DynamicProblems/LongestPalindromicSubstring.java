@@ -18,9 +18,8 @@ public class LongestPalindromicSubstring {
 
     public int LPSubString(String str) {
 
-        
         int N = str.length();
-        if(N == 0){
+        if (N == 0) {
             return 0;
         }
         int maxLength = 1;
@@ -50,6 +49,7 @@ public class LongestPalindromicSubstring {
             }
         }
         // Arrays.stream(T).forEach(item -> System.out.println(Arrays.toString(item)));
+        Arrays.stream(T).forEach(item -> System.out.println(item));
         System.out.print("Longest palindrome substring is; ");
         printSubStr(str, start, start + maxLength - 1);
 
